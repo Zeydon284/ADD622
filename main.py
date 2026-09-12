@@ -3307,16 +3307,16 @@
 # print("Рабочий процесс")
 
 
-import numpy as np
-
-lst = [1,2,3,4,5]
-# print(lst * 2)
-
-arr = np.array([1,2,3,4,5])
-print(arr)
-
-arr2 = np.array([[1,2,3, 11, 12, 13],[4,5,6,14,15,16]])
-print(arr2)
+# import numpy as np
+#
+# lst = [1,2,3,4,5]
+# # print(lst * 2)
+#
+# arr = np.array([1,2,3,4,5])
+# print(arr)
+#
+# arr2 = np.array([[1,2,3, 11, 12, 13],[4,5,6,14,15,16]])
+# print(arr2)
 
 # print(arr * 2)
 # print(arr ** 2)
@@ -3362,3 +3362,13 @@ print(arr2)
 
 # ones = np.ones((2,3), dtype="int32")
 # print(ones)
+
+
+
+import numpy as np
+
+zeros = np.zeros((5), dtype="int32")
+print(zeros)
+
+ones = np.ones((3,4), dtype="int32")
+print(ones)

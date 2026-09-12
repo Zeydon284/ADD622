@@ -3304,9 +3304,61 @@
 
 # print("изменения после коммита")
 
-print("Рабочий процесс")
+# print("Рабочий процесс")
+
+
+import numpy as np
+
+lst = [1,2,3,4,5]
+# print(lst * 2)
+
+arr = np.array([1,2,3,4,5])
+print(arr)
+
+arr2 = np.array([[1,2,3, 11, 12, 13],[4,5,6,14,15,16]])
+print(arr2)
+
+# print(arr * 2)
+# print(arr ** 2)
+# print(arr2 * 2)
+
+
+# количесвто измерений массива
+# print(arr.ndim)
+# print(arr2.ndim)
 
 
 
+# количество строк и столбцов
+# print(arr.shape)
+# print(arr2.shape)
 
 
+# общее количество элементов
+# print(arr.size)
+# print(arr2.size
+
+
+# print(arr2[0,2])
+# print(arr2[0, :])
+# print(arr2[:, 0])
+
+# print(arr2 [0, 1:4:2])
+# print(arr2 [1, 0:-1:2])
+
+
+# arr2[0,0] = 50
+# print(arr2)
+
+# arr2 [0, :] = [0,0,0,1,1,1]
+# print(arr2)
+
+
+# zeros = np.zeros((3,4), dtype="int32")
+# print(zeros)
+
+# zeros = np.zeros((3,4), dtype="float64")
+# print(zeros)
+
+# ones = np.ones((2,3), dtype="int32")
+# print(ones)

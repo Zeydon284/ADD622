@@ -3226,6 +3226,7 @@
 #
 #
 # import sqlite3
+# from statistics import quantiles
 
 # with sqlite3.connect('cars.db') as connection:
 #     connection.row_factory = sqlite3.Row
@@ -3365,10 +3366,403 @@
 
 
 
+# import numpy as np
+#
+# zeros = np.zeros((5), dtype="int32")
+# print(zeros)
+#
+# ones = np.ones((3,4), dtype="int32")
+# print(ones)
+
+
+
+# import numpy as np
+# from numpy.ma.extras import average
+
+# mas = np.full((2,3),5)
+# print(mas)
+
+
+# d = np.random.rand(3,2)
+
+# d = np.random.randint(-5,10, size=(3,4))
+# print(d)
+
+
+# d = np.linspace(0,10,5)
+# d = np.arange(0,10,3)
+# print(d)
+
+
+# arr = np.arange(1,13)
+# print(arr)
+#
+# two = np.reshape(arr,(3,4))
+# print(two)
+
+
+# arr1 = np.array([1,2,3])
+# arr2 = np.array([4,5,6])
+#
+# hstack = np.hstack((arr1, arr2))
+# print(hstack)
+#
+#
+# vstack = np.vstack((arr1, arr2))
+# print(vstack)
+
+
+# arr1 = np.array([1,2,3,4])
+# print(arr1)
+# print(arr1 + 3)
+# print(arr1 - 2)
+# print(arr1 * 2)
+# print(arr1 ** 2)
+
+
+# a = np.array([[1,2],[3,4]])
+# b = np.array([[2,2],[2,2]])
+#
+# print(a + b)
+# print(a * b)
+# print(a ** b)
+
+
+
+
+# a = np.array([[1,2,3],[4,5,6]])
+# print(a)
+#
+# total = a.sum()   #все элементы
+# print(total)
+#
+# col = a.sum(axis=0)   #по столбцам
+# row = a.sum(axis=1)   #по строкам
+# print(col)
+# print(row)
+
+
+
+
+# a = np.array([[1,2,3],[4,5,6]])
+# print(a)
+#
+# mean_all = a.mean()
+# print(mean_all)
+#
+#
+# mean_0 = a.mean(axis=0)
+# print(mean_0)
+#
+#
+# mean_1 = a.mean(axis=1)
+# print(mean_1)
+
+
+
+
+
+# a = np.array([[1,2,3],[4,5,6]])
+# print(a)
+#
+# min_all = a.min()
+# print(min_all)
+#
+# min_0 = a.min(axis = 0)
+# print(min_0)
+#
+# min_1 = a.min(axis = 1)
+# print(min_1)
+#
+#
+#
+# max_all = a.max()
+# print(max_all)
+#
+# max_0 = a.max(axis = 0)
+# print(max_0)
+#
+# max_1 = a.max(axis = 1)
+# print(max_1)
+
+
+
+
+
+# a = np.array([[1,2,3],[4,5,6]])
+# print(a)
+
+
+# arg_max = a.argmax()
+# print(arg_max)
+#
+#
+# arg_0 = a.argmax(axis=0)
+# print(arg_0)
+#
+#
+# arg_1 = a.argmin(axis=1)
+# print(arg_1)
+
+
+
+
+
+# a = np.array([[1,2,3],[4,5,6]])
+# print(a)
+#
+# prod_all = a.prod()
+# print(prod_all)
+#
+# prod_0 = a.prod(axis=0)
+# print(prod_0)
+#
+# prod_1 = a.prod(axis=1)
+# print(prod_1)
+
+
+
+
+
+# a = np.array([[1,2,3],[4,5,6]])
+# print(a)
+#
+# var_all = a.var()
+# print(var_all)
+#
+# var_0 = a.var(axis=0)                       # Дисперсия
+# print(var_0)
+#
+# var_1 = a.var(axis=1)
+# print(var_1)
+
+
+
+
+
+# arr1 = np.array([1,5,20])
+# print(arr1)
+# print(np.median(arr1))
+#                                      # Медиана
+# arr2 = np.array([1,2,4,10])
+# print(arr2)
+# print(np.median(arr2))
+
+
+
+
+
+# arr = np.array([[1,2,3],[2,3,4],[3,4,5],[4,5,6]])
+# print(arr)                                               # Стандартное отклонение
+# print(np.std(arr))
+
+
+
+
+
+
+
+# salaries = np.array([50,23,60,26,19,43,26,64,60,45,26,57,54])
+# print(salaries)
+#
+# mean_salary = np.mean(salaries)
+# print(f"Средняя зарплата: {mean_salary:.2f}")
+#
+# max_salary = np.max(salaries)
+# min_salary = np.min(salaries)
+# print(f"Максимальная зарплата: {max_salary}")
+# print(f"Минимальная зарплата: {min_salary}")
+#
+#
+# std_salary = np.std(salaries)
+# print(f"Стандартное отклонение зп: {std_salary:.2f}")
+#
+#
+# above_mean = salaries [salaries > mean_salary]
+# print(f"Зарпалты выше среднего: {above_mean}")
+
+
+
+
+
+
+#======================================================================================================================================
+# product_ids = np.array([101,102,103,104,105,106,107,108,109,110])
+# prices = np.array([10.99, 20.99, 15.49, 25.49, 5.99, 12.99, 7.99, 30.99, 18.99, 9.99])
+# quantities = np.array([100, 50, 75, 30, 200, 120, 150, 20, 80, 110])
+# dates = np.array(["2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"])
+#
+#
+# total_sales = prices * quantities
+# print(f"Общий объём продаж: {total_sales}")
+#
+#
+# total_sum = np.sum(total_sales)
+# print(f"Сумма выручки: {total_sum}")
+#
+# average_check = np.mean(total_sales)
+# print(f"Средний чек: {average_check}")
+#
+# best_product_index = np.argmax(total_sales)
+# worst_product_index = np.argmin(total_sales)
+# print(f"Лучший товар (ID: {product_ids[best_product_index]}, объём продаж: {total_sales[best_product_index]})")
+# print(f"Худший товар (ID: {product_ids[worst_product_index]}, объём продаж: {total_sales[worst_product_index]})")
+#===============================================================================================================================
+
+
+# import pandas as pd
+
+# # series1 = pd.Series([10,20,30,40,50])
+# series1 = pd.Series((10,20,30,40,50))
+# print(series1)
+#
+# series2 = pd.Series({"b":10,"a":30,"c":20})
+# print(series2)
+#
+# # series3 = pd.Series(15)
+# series3 = pd.Series(15, index=[3,8,4])
+# print(series3)
+
+
+# age = [36,16,23]
+# names = ["Сергей","Роман","Вадим"]
+# series4 = pd.Series(age, index=names)
+# print(series4)
+# # print(series4[["Роман", "Вадим"]])
+# print(series4.size)
+# print(len(series4))
+
+
+
+# series = pd.Series([5,3,5,4,2,3,2,2])
+#
+# unique_value = series.unique()
+# print("Цникальные значения:", unique_value)
+#
+# value_counts = series.value_counts()
+# print("Количество значений в серии")
+# print(value_counts)
+
+
+
+# age = [36,16,23,29]
+# names = ["Сергей","Роман","Вадим", "Виталий"]
+# series = pd.Series(age, index=names)
+# print(series)
+#
+# elem = series.iloc[2]
+# print("\nОдин элемент по позиции:", elem)
+#
+# subset = series.iloc[[0,2]]
+# print("\nНесколько элментов по позиции:")
+# print(subset)
+
+
+
+# series = pd.Series([1,2,3,4,5,6])
+# print(series)
+#
+# # print(series.head()) #первые пять элементов
+# # print(series.head(3)) #первые три элементов
+#
+# # print(series.tail()) #последние пять элементов
+# # print(series.tail(3)) #последние три элементов
+#
+#
+# sampl_data = series.sample(3)
+# print(sampl_data)
+
+
+
+# grades = pd.Series([90,85,85,85,70], index=["Анна","Борис","Влад","Дарья","Елена"])
+# print(grades)
+#
+# # print(grades.nlargest(2, keep="first"))
+# # print(grades.nlargest(2, keep="last"))
+# # print(grades.nlargest(2, keep="all"))
+#
+# print(grades.nsmallest(3))
+
+
+
+
+
+
 import numpy as np
 
-zeros = np.zeros((5), dtype="int32")
-print(zeros)
+#1
 
-ones = np.ones((3,4), dtype="int32")
-print(ones)
+d = np.arange(10,50,5)
+print(d)
+
+
+#2
+
+m = np.random.randint(0,11, size=(3,4))
+print(m)
+
+print(m.shape)
+print(m.size)
+print(m.dtype)
+
+
+#3
+
+d = np.ones((3,4), dtype=int)
+print(d)
+
+d[0, :] = 0
+print(d)
+
+
+#4
+
+d = np.ones((3,3), dtype=int)
+print(d)
+
+sum = np.sum(d)
+print(sum)
+
+mean1 = np.mean((d),axis=0)
+print(mean1)
+
+mean2 = np.mean((d),axis=1)
+print(mean2)
+
+
+#5
+
+steps = np.array([8500, 12000, 4300, 9100, 11500, 15000, 6000])
+
+print(np.min(steps))
+print(np.max(steps))
+print(np.sum(steps))
+
+
+#6
+
+t = np.array([18.2, 19.5, 21.0, 17.8, 16.5, 23.1, 24.5, 20.0, 19.1, 18.0, 22.4, 25.0, 15.8, 17.2])
+
+print(np.mean(t))
+
+print(np.median(t))
+
+print(np.std(t))
+
+print(np.var(t))
+
+
+#7
+
+s = np.array([30, 35, 40, 45, 300])
+
+print(np.mean(s))
+print(np.median(s))
+
+
+#8
+
+p = np.array([150, 142, 165, 139, 155])
+
+print(np.argmin(p))
+print(np.argmax(p))

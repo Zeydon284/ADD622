@@ -3644,7 +3644,7 @@ import numpy as np
 # series = pd.Series([5,3,5,4,2,3,2,2])
 #
 # unique_value = series.unique()
-# print("Цникальные значения:", unique_value)
+# print("Уникальные значения:", unique_value)
 #
 # value_counts = series.value_counts()
 # print("Количество значений в серии")
@@ -3953,9 +3953,9 @@ import numpy as np
 
 # ======================================================================================================================
 
-import numpy as np
-
-import pandas as pd
+# import numpy as np
+#
+# import pandas as pd
 
 
 # data = np.array([

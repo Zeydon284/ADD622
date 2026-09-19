@@ -3227,7 +3227,7 @@
 #
 # import sqlite3
 # from statistics import quantiles
-
+import numpy as np
 # with sqlite3.connect('cars.db') as connection:
 #     connection.row_factory = sqlite3.Row
 #     cursor = connection.cursor()
@@ -3306,6 +3306,11 @@
 # print("изменения после коммита")
 
 # print("Рабочий процесс")
+
+
+
+
+# numpy ================================================================================================================
 
 
 # import numpy as np
@@ -3586,7 +3591,7 @@
 
 
 
-#======================================================================================================================================
+#=======================================================================================================================
 # product_ids = np.array([101,102,103,104,105,106,107,108,109,110])
 # prices = np.array([10.99, 20.99, 15.49, 25.49, 5.99, 12.99, 7.99, 30.99, 18.99, 9.99])
 # quantities = np.array([100, 50, 75, 30, 200, 120, 150, 20, 80, 110])
@@ -3607,8 +3612,10 @@
 # worst_product_index = np.argmin(total_sales)
 # print(f"Лучший товар (ID: {product_ids[best_product_index]}, объём продаж: {total_sales[best_product_index]})")
 # print(f"Худший товар (ID: {product_ids[worst_product_index]}, объём продаж: {total_sales[worst_product_index]})")
-#===============================================================================================================================
+#=======================================================================================================================
 
+
+# pandas ===============================================================================================================
 
 # import pandas as pd
 
@@ -3688,81 +3695,311 @@
 
 
 
+# import numpy as np
+#
+# #1
+#
+# d = np.arange(10,50,5)
+# print(d)
+#
+#
+# #2
+#
+# m = np.random.randint(0,11, size=(3,4))
+# print(m)
+#
+# print(m.shape)
+# print(m.size)
+# print(m.dtype)
+#
+#
+# #3
+#
+# d = np.ones((3,4), dtype=int)
+# print(d)
+#
+# d[0, :] = 0
+# print(d)
+#
+#
+# #4
+#
+# d = np.ones((3,3), dtype=int)
+# print(d)
+#
+# sum = np.sum(d)
+# print(sum)
+#
+# mean1 = np.mean((d),axis=0)
+# print(mean1)
+#
+# mean2 = np.mean((d),axis=1)
+# print(mean2)
+#
+#
+# #5
+#
+# steps = np.array([8500, 12000, 4300, 9100, 11500, 15000, 6000])
+#
+# print(np.min(steps))
+# print(np.max(steps))
+# print(np.sum(steps))
+#
+#
+# #6
+#
+# t = np.array([18.2, 19.5, 21.0, 17.8, 16.5, 23.1, 24.5, 20.0, 19.1, 18.0, 22.4, 25.0, 15.8, 17.2])
+#
+# print(np.mean(t))
+#
+# print(np.median(t))
+#
+# print(np.std(t))
+#
+# print(np.var(t))
+#
+#
+# #7
+#
+# s = np.array([30, 35, 40, 45, 300])
+#
+# print(np.mean(s))
+# print(np.median(s))
+#
+#
+# #8
+#
+# p = np.array([150, 142, 165, 139, 155])
+#
+# print(np.argmin(p))
+# print(np.argmax(p))
+
+
+
+
+
+
+
+
+
+# import pandas as pd
+
+# s1 = pd.Series([1,2,3,4,5])
+# s2 = pd.Series([6,7,8,9,10])
+#
+# s3 = s1 + s2
+# s4 = s2 - s1
+# s5 = s2 * s1
+# s6 = s2 / s1
+# s7 = s2 % s1
+# print(s3)
+# print(s4)
+# print(s5)
+# print(s6)
+# print(s7)
+
+
+# s1 = pd.Series(["a", "b", "c", "w", "r"])
+# s2 = pd.Series(["d", "e", "f"])
+#
+# s3 = s1 + s2
+# print(s3)
+
+
+# s1 = pd.Series([1,2,3,4,5])
+# s2 = s1 + 5
+# print(s2)
+
+
+
+# s = pd.Series([10, 20, 30, 40, 50])
+#
+# filtered_data = s[s > 30]   # [30, 40, 50]
+# print(filtered_data)
+
+
+
+# s = pd.Series(["Сергей", "Роман", "Вадим", "Виталий", "Сергей", "Вадим"])
+# filtered_data = s[s == "Сергей"]
+# print(filtered_data)
+
+
+
+# s = pd.Series([1,2,3,5,8,13,21,34,55,89])
+# # filtered_data = s[(s > 8) & (s < 30)]
+# filtered_data = s[(s > 8) | (s < 30)]
+# print(filtered_data)
+
+
+
+# s = pd.Series(["Сергей", "Роман", "Вадим", "Виталий", "Александр", "Артём"])
+# filtered_data = s[s.isin(["Роман", "Игорь", "Артём"])]
+# print(filtered_data)
+
+
+
+# s = pd.Series([1,2,3,5,8,13,21,30,55,89])
+# filtered_data = s[s.between(8, 30)]
+# print(filtered_data)
+
+
+
+# s = pd.Series(["1.0", "2", "ошибка", "4.5"])
+# res = pd.to_numeric(s, errors='coerce')
+# print(res)
+
+
+# s = pd.Series(["1", "2", "4"])
+# res = s.astype(float)
+# print(res)
+
+
+
+# dataFrame ============================================================================================================
+
+
+# data = {
+#     "Name": ["Сергей","Анна","Роман","Александр"],
+#     "Age": [28, 36, 23, 42],
+#     "City": ["Сочи","Москва","Воронеж","Армавир"]
+# }
+
+# df = pd.DataFrame(data)
+# print(df)
+#
+# print("*" * 30)
+#
+# cities = df["City"]
+# print(cities)
+#
+# print("*" * 30)
+#
+# cities = df.City
+# print(cities)
+#
+# print("*" * 30)
+#
+# columns = ["City", "Name"]
+# print(df[columns])
+# # print(df[["City", "Name"]])
+#
+# print("*" * 30)
+#
+# int_columns = df.select_dtypes(include="int64")
+# print(int_columns)
+
+
+
+# df = pd.DataFrame(data, index=["str1", "str2", "str3", "str4"])
+# print(df)
+#
+# print("*" * 30)
+
+# print(df.loc["str2"])
+
+# print(df.loc["str1":"str3"])
+
+# print(df.loc[["str1", "str3"]])
+
+# print(df.iloc[0])
+#
+# print("*" * 30)
+#
+# print(df[1:3])
+
+
+# print(df["City"]["str3"])
+#
+# print("*" * 30)
+#
+# print(df["City"][1:3])
+#
+# print("*" * 30)
+#
+# print(df["City"]["str2" : "str4"])
+#
+# print("*" * 30)
+
+
+# column = ["City", "Name"]
+# print(df[column][1:3])
+
+
+# print(df.shape)
+# print("*" * 30)
+#
+# print(df.dtypes)
+
+
+# rows = [
+#     ["Ноутбук", 50000, 5],
+#     ["Смартфон", 30000, 10],
+#     ["Наушники", 5000, 25]
+# ]
+#
+# df_products = pd.DataFrame(rows, columns=["Товар", "Цена", "Количество"])
+# print(df_products)
+#
+# print("*" * 30)
+#
+# api_data = [
+#     {"Фио": "Иванов И.И.", "Департамент": "IT"},
+#     {"Фио": "Петров П.П.", "Департамент": "HR"},
+#     {"Фио": "Сидоров С.С."}
+# ]
+#
+# df = pd.DataFrame(api_data)
+# print(df)
+
+# ======================================================================================================================
+
 import numpy as np
 
-#1
-
-d = np.arange(10,50,5)
-print(d)
+import pandas as pd
 
 
-#2
+# data = np.array([
+#     ["Tom", 41, "Yandex"],
+#     ["Bob", 56, "VK"],
+#     ["Sam", 31, "Sberbank"],
+# ])
+#
+# columns = ["Name", "Age", "Company"]
+# df = pd.DataFrame(data, columns=columns)
+# print(df)
 
-m = np.random.randint(0,11, size=(3,4))
-print(m)
+# excel ================================================================================================================
 
-print(m.shape)
-print(m.size)
-print(m.dtype)
+# data = pd.read_excel("data.xlsx")
+# print(data)
+# print("*" * 50)
+# # print(data.head(3))
+# # print(data.tail(3))
+# print(data.Age.describe())
+# print("*" * 50)
+# print(data.describe())
 
+# json =================================================================================================================
 
-#3
+# df = pd.read_json("people.json")
+# print(df)
 
-d = np.ones((3,4), dtype=int)
-print(d)
+# ======================================================================================================================
 
-d[0, :] = 0
-print(d)
-
-
-#4
-
-d = np.ones((3,3), dtype=int)
-print(d)
-
-sum = np.sum(d)
-print(sum)
-
-mean1 = np.mean((d),axis=0)
-print(mean1)
-
-mean2 = np.mean((d),axis=1)
-print(mean2)
-
-
-#5
-
-steps = np.array([8500, 12000, 4300, 9100, 11500, 15000, 6000])
-
-print(np.min(steps))
-print(np.max(steps))
-print(np.sum(steps))
-
-
-#6
-
-t = np.array([18.2, 19.5, 21.0, 17.8, 16.5, 23.1, 24.5, 20.0, 19.1, 18.0, 22.4, 25.0, 15.8, 17.2])
-
-print(np.mean(t))
-
-print(np.median(t))
-
-print(np.std(t))
-
-print(np.var(t))
-
-
-#7
-
-s = np.array([30, 35, 40, 45, 300])
-
-print(np.mean(s))
-print(np.median(s))
-
-
-#8
-
-p = np.array([150, 142, 165, 139, 155])
-
-print(np.argmin(p))
-print(np.argmax(p))
+# df = pd.read_csv("internet.csv")
+# print(df)
+# print("*" * 50)
+#
+# # print(df.sort_values("mobile", ascending=True)) # сортировка по возрастанию, если False, то по убыванию
+# # print(df.dropna())
+#
+# new_country = {"country": "Галактика", "broadband": 1234, "mobile": 295.45}
+# df1 = pd.DataFrame([new_country])
+# print(df1)
+#
+# print("*" * 50)
+#
+# new_list1 = pd.concat([df1, df], ignore_index=True)
+# print(new_list1)
+#
+# new_list1.to_csv("country.csv")

@@ -3227,7 +3227,7 @@
 #
 # import sqlite3
 # from statistics import quantiles
-import numpy as np
+# import numpy as np
 # with sqlite3.connect('cars.db') as connection:
 #     connection.row_factory = sqlite3.Row
 #     cursor = connection.cursor()
@@ -3984,7 +3984,7 @@ import numpy as np
 # df = pd.read_json("people.json")
 # print(df)
 
-# ======================================================================================================================
+# csv ==================================================================================================================
 
 # df = pd.read_csv("internet.csv")
 # print(df)
@@ -4002,4 +4002,272 @@ import numpy as np
 # new_list1 = pd.concat([df1, df], ignore_index=True)
 # print(new_list1)
 #
-# new_list1.to_csv("country.csv")
+# print("*" * 50)
+# # new_list1.to_csv("country.csv")
+# # new_list1.to_csv("new_data.txt", index=False)
+# # new_list1.to_string("new_data.txt", index=False)  #сохранение в txt
+#
+# new_list1.drop(0, inplace=True)  #удаление строки
+# print(new_list1)
+
+
+
+#поиск по критерям =====================================================================================================
+## df = pd.read_csv("internet.csv")
+## print(df)
+# print("*" * 50)
+# print(df[df['mobile'] > 100])
+# filtered_data = df[df['country'].str.startswith("S")]
+# print(filtered_data)
+# print(df['broadband'].agg(['mean']))
+# print(df['broadband'].agg(['min', 'max', 'median']))
+
+
+#перебор по столбцам с помощью цикла ===================================================================================
+# for row_label, row in df.items():
+#     print(row_label, row, sep="\n", end="\n\n")
+
+
+#перебор по строкам с помощью цикла ====================================================================================
+# for row_label, row in df.iterrows():
+#     print(row_label, row, sep="\n", end="\n\n")
+
+#перебор по строкам с помощью цикла (картеж) ===========================================================================
+# for item in df.itertuples():
+#     print(item, sep="\n", end="\n\n")  #Pandas(Index=0, country='Singapore', broadband=255.83, mobile=105.01)
+
+# ======================================================================================================================
+
+
+# data = {
+#     "User_ID": [101, 102, 101, 103, 101],
+#     "City": ['Москва', 'Питер', 'Москва', 'Казань', 'Сочи'],
+#     "Spend": [500, 700, 500, 300, 1200]
+# }
+#
+# df = pd.DataFrame(data)
+# print(df)
+#
+# print("*" * 50)
+
+# dublicates = df.duplicated()  # <-----------ищет дубликаты=============================
+# print(dublicates)
+#
+# print("*" * 50)
+#
+# df_cleaned = df.drop_duplicates().reset_index(drop=True)  <-----------удаляет дубликаты=============================
+# print(df_cleaned)
+#
+# df_cleaned = df.drop_duplicates(subset="User_ID", keep=False)
+# print(df_cleaned)
+#
+# df.drop_duplicates(inplace=True)
+# print(df)
+
+# year = [1147, 1703, 1723, 1893, 1589]
+# df["Year"] = year  #<-----------добвляет столбец=============================
+# print(df)
+
+
+# new_columns = pd.DataFrame({
+#     "Year": [1147, 1703, 1723, 1893, 1589],
+#     "Time zone": ["GMT+3", "GMT+3", "GMT+3", "GMT+3", "GMT+3"]
+# })
+#
+# df = pd.concat([df, new_columns], axis=1)
+# print(df)
+#
+# print("*" * 50)
+#
+# df.drop(["Year"], axis=1, inplace=True)  #<-----------удаляет столбец=============================
+# print(df)
+
+
+# new_row = pd.Series([104, "Воронеж", 1042], index=df.columns)
+# df.loc[len(df)] = new_row           #<-----------добвляет строку=============================
+# print(df)
+
+
+# new_row = pd.DataFrame([[104, "Воронеж", 1042], [105, "Саратов", 542]], columns=df.columns)
+# df = pd.concat([df, new_row], ignore_index=True)
+# print(df)
+#
+# print("*" * 50)
+#
+# rows = [1, 3]
+# df.drop(index=rows, inplace=True)  #<-----------удаляет строку=============================
+# print(df)
+
+
+# Описательная статистика ==============================================================================================
+
+# data = {"Age": [34, 37, 13, 64, 37, 47, 24, 38, 26, 41, 19, 51, 44]}
+# df = pd.DataFrame(data)
+# print(df)
+# print("*" * 50)
+#
+# print("Среднее значение:", df["Age"].mean())
+# print("*" * 50)
+# print("Медиана:", df["Age"].median())
+# print("*" * 50)
+# print("Мода:", df["Age"].mode()[0])
+# print("*" * 50)
+# print("Разброс:", df["Age"].var(), "и стандартное отклонение:", df["Age"].std())
+# print("*" * 50)
+# print("Квантилия возраста:")
+# print(df["Age"].quantile([0.25, 0.5, 0.75]))
+# print("*" * 50)
+# print("90-й процентиль возраста:", df["Age"].quantile(0.90))
+
+# ======================================================================================================================
+
+# Пропущенные значения =================================================================================================
+
+# import numpy as np
+#
+# import pandas as pd
+
+# data = {
+#     "A": [1, 2, np.nan, 4, None],
+#     "B": [None, 6, 7, 8, np.nan],
+# }
+# df = pd.DataFrame(data)
+# print("DataFrame до заполнения пропущнных значений:")
+# print(df)
+# print("*" * 50)
+#
+# print("DataFrame после заполнения пропущнных значений:")
+# filled_df = df.fillna(0)
+# print(filled_df)
+#
+# print("*" * 50)
+#
+# filled_df = df.copy()
+# filled_df["A"] = df["A"].fillna(df["A"].mean())
+# print(filled_df)
+#
+# print("*" * 50)
+#
+# filled_df = df.copy()
+# filled_df["B"] = df["B"].fillna(df["B"].median())
+# print(filled_df)
+
+
+
+
+
+
+
+# missing_data = df.isna()
+# print(missing_data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# data = {
+#     "City": ["Москва", "СПБ", "Новосибирск", "Екатеринбург", "Казань", "Красноярск", "Волгоград"],
+#     "Population": [13274, None, 1637, None, 1330, 1212, None],
+#     "Time zone": ["GMT+3", "GMT+3", "GMT+7", "GMT+5", "GMT+3", None, "GMT+3"]
+# }
+#
+# df = pd.DataFrame(data)
+# print("DataFrame до заполнения пропущнных значений:")
+# print(df)
+# print("*" * 50)
+#
+# tz_mode = df["Time zone"].mode()[0]
+# print("Мода для столбца Time zone:", tz_mode)
+# print("*" * 50)
+# print("DataFrame после заполнения пропущнных значений:")
+# df["Time zone"] = df["Time zone"].fillna(tz_mode)
+# print(df)
+
+
+
+# missing_data = df["Population"].isna()
+# print(missing_data)
+#
+# print("*" * 50)
+#
+# missing_data = df[df["Population"].isna()]
+# print(missing_data)
+#
+# print("*" * 50)
+#
+# missing_mask = df.isna()
+# missing_data = df[missing_mask.any(axis=1)]
+# print(missing_data)
+
+
+# not_missing_mask = df.notna()
+# non_missing_df = df[not_missing_mask.all(axis=1)]
+# print(non_missing_df)
+
+
+
+
+
+
+
+# data = {
+#     'Имя': ['Анна', 'Борис', 'Влад', 'Ольга', 'Марина', 'Роман', 'Екатерина', 'Виктор', 'Ирина'],
+#     'Возраст': [25, 34, 41, 28, 19, 20, 36, 41, 38],
+#     'Город': ['Москва', 'Санкт-Петербург', 'Казань', 'Сочи', 'Санкт-Петербург', 'Москва', 'Санкт-Петербург', 'Казань', 'Сочи']
+# }
+#
+# df = pd.DataFrame(data)
+# print(df)
+# print("*" * 50)
+# print(df.groupby("Город")["Возраст"].sum())
+# print("*" * 50)
+# print(df.groupby("Город")["Возраст"].count())
+# print("*" * 50)
+# print(df.groupby("Город")["Возраст"].median())
+
+
+
+
+
+
+# data = {
+#     "product_id": [105, 111, 102, 108, 123, 105],
+#     "category": [
+#         " Электроника ",
+#         "Одежда",
+#         " Электроника",
+#         "Обувь",
+#         "Одежда ",
+#         " Электроника "
+#     ],
+#     'price': ["15 000,50", "2 500,00", "Не указана", "1 200", None, "15 000,50"],
+#     'quantity': [2, np.nan, 1, 5, 10, 2]
+# }
+#
+#
+# df = pd.DataFrame(data)
+# print(df)
+#
+# print("*" * 50)
+#
+# df["category"] = df["category"].str.strip()
+# print(df)
+#
+# print("*" * 50)
+#
+# df["price"] = df["price"].str.replace(" ", "")
+# print(df)
+#
+# print("*" * 50)
+#
+# df["price"] = df["price"].str.replace(",", ".")
+# print(df)

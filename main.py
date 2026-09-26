@@ -4234,9 +4234,10 @@
 # print("*" * 50)
 # print(df.groupby("Город")["Возраст"].median())
 
+# ======================================================================================================================
 
-
-
+# import pandas as pd
+# import numpy as np
 
 
 # data = {
@@ -4260,14 +4261,166 @@
 # print("*" * 50)
 #
 # df["category"] = df["category"].str.strip()
-# print(df)
-#
-# print("*" * 50)
+# # print(df)
+# #
+# # print("*" * 50)
 #
 # df["price"] = df["price"].str.replace(" ", "")
+# # print(df)
+# #
+# # print("*" * 50)
+#
+# df["price"] = df["price"].str.replace(",", ".")
+# # print(df)
+# #
+# # print("*" * 50)
+#
+# df["price"] = pd.to_numeric(df["price"], errors="coerce")
+# # print(df)
+# #
+# # print("*" * 50)
+#
+# df["price"] = df["price"].fillna(df["price"].median())
+# # print(df)
+# # print("*" * 50)
+#
+# df["quantity"] = df["quantity"].fillna(1)
+# # print(df)
+# #
+# # print("*" * 50)
+#
+# df["total_revenue"] = df["quantity"] * df["price"]
+# # print(df)
+# # print("*" * 50)
+#
+# df = df.drop_duplicates().reset_index(drop=True)
 # print(df)
+
+# ======================================================================================================================
+
+
+# import pandas as pd
+#
+# df = pd.read_csv('platforms.csv')
+# print(df, end='\n\n')
 #
 # print("*" * 50)
 #
-# df["price"] = df["price"].str.replace(",", ".")
-# print(df)
+# df["Views"] = df["Views"].fillna(df["Views"].mean())
+# df["Revenue"] = df["Revenue"].fillna(0)
+# df.drop_duplicates(inplace=True)
+# print(df, end='\n\n')
+#
+# print("*" * 50)
+#
+# df["Views"] = df["Views"].astype(int)
+# df["Date"] = pd.to_datetime(df["Date"])
+# print(df, end='\n\n')
+#
+# print("*" * 50)
+#
+# print(df.describe(), end='\n\n')
+#
+# print("*" * 50)
+#
+# filtr = df[df["Platform"] == "YouTube"]
+# print(filtr, end='\n\n')
+#
+# print("*" * 50)
+#
+# mean_views = filtr["Views"].mean()
+# mean_revenue = filtr["Revenue"].mean()
+# print(mean_views, end='\n\n')
+# print(mean_revenue, end='\n\n')
+#
+# filtr.to_csv('platforms.csv', index=False)
+
+# Графики ==============================================================================================================
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# x = np.array([4,5,6,7,8])
+# y = np.array([1, 2, -6, 0, 4])
+# plt.plot(x, y)
+# plt.show()
+
+# x = np.array([1, 1, 5, 5, 1])
+# y = np.array([1, 5, 5, 1, 1])
+# plt.plot(x, y)
+# plt.show()
+
+# y = np.array([0, 1, 2, 3, 4])
+# x = np.array([a * a for a in y])
+# plt.plot(x, y)
+# plt.grid()
+# plt.show()
+
+# plt.plot([1,2,3],[4,5,2], [1, 2, 4], [5, 3, 6])
+# plt.grid()
+# plt.show()
+
+# plt.plot([1, 2, 4], [4, 2, 5], "--", color="red")
+# plt.plot([1, 2, 4], [4, 2, 5], "--", color="#F00")
+# plt.plot([1, 2, 4], [4, 2, 5], "--", color="#FF0000")
+# plt.plot([1, 2, 4], [4, 2, 5], "--", c="red")
+# plt.plot([1, 2, 4], [4, 2, 5], "-.o", c="red")
+# plt.plot([1, 2, 4], [4, 2, 5], "-.", c="red", marker="s", markerfacecolor="blue", linewidth=4)
+# plt.show()
+
+# ======================================================================================================================
+# x = [1, 2, 4]
+# y = [4, 2, 5]
+# x1 = [1, 2, 4]
+# y1 = [3, 4, 4]
+#
+# plt.plot(x, y, color="green", label = "Линия 1")
+# plt.plot(x1, y1, color="orange", label = "Линия 2")
+# plt.fill_between(x1, y1, y, color='yellow', alpha=0.3, label = "Область между ними")
+# plt.title("Заливка между двумя линиями")    # подпись к графику
+# plt.xlabel("Ось X")   # подпись к оси
+# plt.ylabel("Ось Y")   # подпись к оси
+# plt.legend()    # отображение подписей
+# plt.minorticks_on()   # включение маленькой сетки
+# plt.grid()  # включение сетки
+# # plt.grid(which="major", color="#444", linewidth="0.5")
+# plt.grid(which="minor", color="#aaa", ls=":")
+# plt.show()  # запуск графика
+
+# Графики другими командами (более подконтрольно) ======================================================================
+
+# fig, ax = plt.subplots()
+#
+# ax.plot([1, 2, 3], [4, 5, 2])
+# ax.set_title("Мой график")
+# plt.show()
+
+
+days = np.array(list(range(1,8)))
+temperature = [20, 22, 21, 26, 28, 23, 24]
+
+fig, ax = plt.subplots()
+
+ax.set_xlabel('День')
+ax.set_ylabel('Температура', fontsize='14')
+ax.set_title("Динамика температуры за неделю", fontsize = 16, fontweight = 'bold', color = 'blue', loc = 'center')
+
+ax.set_yticks([20, 22, 21, 26, 28, 23, 24])
+ax.set_yticklabels(["20°", "22°", "21°", "26°", "28°", "23°", "24°"])
+
+ax.set_xticks(days)
+ax.set_xticklabels(["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"])
+
+ax.tick_params(axis="x", length=7, labelsize=12)  #rotation=90
+ax.grid(True, which="major", axis="both", linestyle="--", linewidth=0.5, color='gray', alpha=0.7)
+
+ax.text(5, 28, "Макс. значение", fontsize=14, color='red', va='bottom', ha='center')
+
+ax.plot(days, temperature, label = "Температура")
+ax.legend(loc="lower right", fontsize = 12, framealpha = 0.8)
+
+plt.show()
+
+
+

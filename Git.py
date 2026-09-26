@@ -107,3 +107,58 @@
 # df['Продажи'] = df['Продажи'].fillna(ms)
 #
 # print(df)
+
+
+
+
+
+
+
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# №1
+
+# Ay = np.array([20, 22, 19, 23, 25])
+# By = np.array([15, 17, 18, 16, 21])
+#
+# x = np.array([1, 2, 3, 4, 5])
+#
+# fig, ax = plt.subplots()
+#
+# ax.set_xticks(x)
+# ax.set_xticklabels(["Пн", "Вт", "Ср", "Чт", "Пт"])
+#
+# ax.plot(x, Ay,  label = "Температура A", color = "red", marker = "o" )
+# ax.plot(x, By,  label = "Температура Б", color = "green",marker = "s", linestyle = "-." )
+#
+# ax.set_title("Изменение температуры")
+# ax.set_xlabel("День")
+# ax.set_ylabel("Температура")
+#
+# ax.legend(loc="upper left", fontsize = 12, framealpha = 0.8)
+#
+# plt.grid()
+# plt.show()
+
+
+
+# №2
+
+# x = np.array([1, 2, 3, 4, 5, 6])
+# y = np.array([120, 150, 90, 210, 180, 250])
+#
+# fig, ax = plt.subplots()
+#
+# ax.set_title("Изменение дохода")
+# ax.set_xlabel("Месяц")
+# ax.set_ylabel("Доход (тыс. руб.)")
+#
+# ax.set_xticks(x)
+# ax.set_xticklabels(["Янв", "Фев", "Март", "Апрель", "Май", "Июнь"])
+#
+# ax.plot(x, y, color = 'purple',  linewidth=3)
+# ax.plot(6, 250, marker = 'o', markerfacecolor = 'red', markersize = 10)
+# ax.grid()
+# plt.show()

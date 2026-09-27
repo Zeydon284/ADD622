@@ -162,3 +162,47 @@
 # ax.plot(6, 250, marker = 'o', markerfacecolor = 'red', markersize = 10)
 # ax.grid()
 # plt.show()
+
+
+
+
+
+
+
+
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import pandas as pd
+
+
+# №1
+
+# s = [35, 42, 54, 62, 71, 85, 93, 104, 115, 128]
+#
+# price = [8.4, 11.3, 14.6, 19.8, 22.1, 28.9, 33.5, 41.6, 49.5, 58.9]
+#
+# plt.scatter(s, price, color='blue', alpha=0.5)
+# plt.grid()
+# plt.title('Соотношение площади и стоимоти квартир')
+# plt.xlabel("Площадь (метры кв.)")
+# plt.ylabel("Стоимость (млн. руб.)")
+#
+# plt.show()
+
+
+# №2
+
+# categories = ["Электроника", "Одежда", "Книги", "Дом и сад"]
+# price = [450, 320, 180, 290]
+# colors = ["red", "green", "blue", "yellow"]
+#
+# plt.figure(figsize=(8, 5))
+#
+# plt.bar(categories, price, color=colors, alpha=0.8, width=0.6)
+#
+# plt.title("Сравнение объемов продаж разных категорий товаров")
+# plt.xlabel("Категории")
+# plt.ylabel("Стоимость (тыс. руб.)")
+# plt.grid(axis="y", alpha=0.5)
+# plt.show()

@@ -3241,8 +3241,7 @@
 # cursor.execute('''SELECT model, price FROM cars''')
 # for row in cursor:
 #     print(row[0])
-
-
+from matplotlib import pyplot as plt, figure
 
 # import sqlite3
 #
@@ -3281,7 +3280,7 @@
 #     #     binary = sqlite3.Binary(img)
 #     #     cur.execute("INSERT INTO users VALUES('Федор', ?, 1000)", (binary,))
 #
-#     cur.execute("SELECT ava FROM users LIMIT 1")  # ("бинарный код",)
+# cur.execute("SELECT ava FROM users LIMIT 1")  # ("бинарный код")
 #     img = cur.fetchone()["ava"]  # "бинарный код"
 #     write_ava("out.png", img)
 
@@ -4337,8 +4336,8 @@
 
 # Графики ==============================================================================================================
 
-import numpy as np
-import matplotlib.pyplot as plt
+# import numpy as np
+# import matplotlib.pyplot as plt
 
 
 # x = np.array([4,5,6,7,8])
@@ -4397,30 +4396,271 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 
-days = np.array(list(range(1,8)))
-temperature = [20, 22, 21, 26, 28, 23, 24]
+# days = np.array(list(range(1,8)))
+# temperature = [20, 22, 21, 26, 28, 23, 24]
+#
+# fig, ax = plt.subplots()
+#
+# ax.set_xlabel('День')
+# ax.set_ylabel('Температура', fontsize='14')
+# ax.set_title("Динамика температуры за неделю", fontsize = 16, fontweight = 'bold', color = 'blue', loc = 'center')
+#
+# ax.set_yticks([20, 22, 21, 26, 28, 23, 24])
+# ax.set_yticklabels(["20°", "22°", "21°", "26°", "28°", "23°", "24°"])
+#
+# ax.set_xticks(days)
+# ax.set_xticklabels(["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"])
+#
+# ax.tick_params(axis="x", length=7, labelsize=12)  #rotation=90
+# ax.grid(True, which="major", axis="both", linestyle="--", linewidth=0.5, color='gray', alpha=0.7)
+#
+# ax.text(5, 28, "Макс. значение", fontsize=14, color='red', va='bottom', ha='center')
+#
+# ax.plot(days, temperature, label = "Температура")
+# ax.legend(loc="lower right", fontsize = 12, framealpha = 0.8)
+#
+# plt.show()
 
-fig, ax = plt.subplots()
-
-ax.set_xlabel('День')
-ax.set_ylabel('Температура', fontsize='14')
-ax.set_title("Динамика температуры за неделю", fontsize = 16, fontweight = 'bold', color = 'blue', loc = 'center')
-
-ax.set_yticks([20, 22, 21, 26, 28, 23, 24])
-ax.set_yticklabels(["20°", "22°", "21°", "26°", "28°", "23°", "24°"])
-
-ax.set_xticks(days)
-ax.set_xticklabels(["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"])
-
-ax.tick_params(axis="x", length=7, labelsize=12)  #rotation=90
-ax.grid(True, which="major", axis="both", linestyle="--", linewidth=0.5, color='gray', alpha=0.7)
-
-ax.text(5, 28, "Макс. значение", fontsize=14, color='red', va='bottom', ha='center')
-
-ax.plot(days, temperature, label = "Температура")
-ax.legend(loc="lower right", fontsize = 12, framealpha = 0.8)
-
-plt.show()
 
 
+# Граффик рассеивания ==================================================================================================
 
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import pandas as pd
+
+# x = np.array([np.random.randint(0, 10) for i in range(100)])
+# y = np.array([np.random.randint(0, 10) for i in range(100)])
+#
+#
+# plt.scatter(x, y, color='red', alpha=0.5)
+# plt.xlabel('Переменная X')
+# plt.ylabel('Переменная Y')
+# plt.title('Диаграмма рассеивания')
+# plt.show()
+
+# ==================================================================
+#
+#
+# districts = np.array([i for i in range(10) for j in range(20)])
+# print(districts)
+# base_prices = [65, 80, 75, 35, 90, 55, 40, 110, 95, 70]
+# prices = [
+#     base_prices[d] + np.random.randint(-10, 10) for d in districts
+# ]
+#
+#
+# df = pd.DataFrame({"District": districts, "Price": prices})
+#
+# mean_price = df.groupby("District")["Price"].mean()
+# cheapest_districts = mean_price.nsmallest(2).index.tolist()
+# print(f"Самые дешёвые районы:{cheapest_districts}")
+#
+# cheapest_df = df[df["District"].isin(cheapest_districts)]
+# other_df = df[-df["District"].isin(cheapest_districts)]
+#
+# plt.figure(figsize=(10,6))
+#
+# plt.scatter(
+#     other_df["District"],
+#     other_df["Price"],
+#     color="lightgray",
+#     edgecolor="black",
+#     linewidth=0.5,
+#     label="Остальные районы"
+# )
+#
+# plt.scatter(
+#     cheapest_df["District"],
+#     cheapest_df["Price"],
+#     color="red",
+#     edgecolor="black",
+#     alpha=0.9,
+#     s=70,
+#     label="2 самых дешёвых района"
+# )
+#
+# plt.title("Распределение цен на квратиры по районам города", fontsize=14, fontweight="bold")
+#
+# plt.xlabel("Номер района", fontsize=12)
+# plt.ylabel("Цена квартиры (млн. руб.)", fontsize=12)
+#
+# plt.grid(axis="y", linestyle="--", alpha=0.5)
+#
+# plt.legend()
+#
+# plt.show()
+#
+# ======================================================================================================================
+# Гистограммы
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import pandas as pd
+
+# age_data = [np.random.randint(18, 55) for i in range(25)]
+# print(age_data)
+#
+#
+# plt.hist(age_data, bins=10, edgecolor='black', color='orange')
+#
+# plt.title('Возраст зрителей в кинотеатре')
+# plt.xlabel("Возраст (лет)")
+# plt.ylabel("Количество человек")
+#
+# plt.show()
+
+# ========================================================================
+
+# import random
+#
+# delivery_times = [random.gauss(35.0, 7.0) for i in range(1000)]
+#
+# plt.figure(figsize=(9,5))
+#
+# plt.hist(
+#     delivery_times,
+#     bins=20,
+#     color="#3498db",
+#     edgecolor="white",
+#     alpha=0.8,
+# )
+#
+# plt.axvline(x=40, color="red", linestyle="--", linewidth=2, label="Стандарт компании (40 минут)")
+#
+# plt.title("Анализ времени доставки пиццы (1000 заказов)", fontsize=14, fontweight="bold")
+# plt.xlabel("Время доставки (минуты)", fontsize=12)
+# plt.ylabel("Количество заказов", fontsize=12)
+# plt.grid(axis="y", linestyle=":",alpha=0.6)
+# plt.legend(loc="upper left")
+#
+# plt.show()
+
+# ======================================================================================================================
+# Столбчатая диаграмма
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import pandas as pd
+#
+#
+# categories = ["Пицца", "Бургеры", "Суши", "Салаты", "Напитки"]
+# sales = [120, 85, 95, 40, 150]
+#
+#
+# plt.figure(figsize=(8, 5))
+# plt.bar(categories, sales, color="#1f77ff", edgecolor="#0000BB", width=0.6)
+#
+# plt.title("Проадажа блюд в кафе за день", fontsize=14, weight="bold")
+# plt.xlabel("Категории меню", fontsize=12)
+# plt.ylabel("Количество проданных порций", fontsize=12)
+# plt.grid(axis="y", linestyle="--", alpha=0.5)
+#
+# plt.show()
+
+# ==================================================================
+#
+# languages = ["Python", "JavaScript", "Java", "C#", "C++", "Go", "PHP"]
+# project_count = [45, 38, 29, 22, 15, 12, 8]
+#
+# colors = ['purple' if i==0 else '#b0bec5' for i in range(len(languages))]
+# # print(colors)
+#
+# plt.figure(figsize = (9, 6))
+#
+# bars = plt.bar(languages, project_count, color=colors)
+#
+# plt.title('Использование языков программирования в компании', fontsize=14, fontweight='bold')
+# plt.xlabel("Языки программирования", fontsize=12, labelpad=25)
+# plt.ylabel("Количество активных проектов", fontsize=12, labelpad=25)
+#
+# plt.ylim(0, max(project_count) + 5)
+#
+# plt.grid(axis='y', linestyle='--', alpha=0.5)
+# plt.gca().spines['top'].set_visible(False)
+# plt.gca().spines['right'].set_visible(False)
+#
+#
+# plt.tight_layout()
+#
+# plt.show()
+
+
+# ======================================================================================================================
+# Штабелированный график
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import pandas as pd
+
+# days = [1,2,3,4,5]
+#
+# works = [5,4,6,5,4]
+# rest = [3,4,2,3,4]
+# sleep = [5,7,10,9,8]
+#
+# plt.stackplot(days,works,rest,sleep, labels=['Работа', 'Отдых', 'Сон'], colors=['#4466ee','#00bbff','#ff9988'])
+#
+# plt.title("Распределение времени за 5 дней")
+# plt.xlabel("Дни")
+# plt.ylabel("Часы")
+# plt.legend()
+# plt.grid(alpha=0.3)
+#
+# plt.show()
+
+# ========================================================
+
+# mouths = pd.date_range(start='2026-01-01', end='2026-12-31', freq='MS')
+# print(mouths)
+#
+# laptops = [5500, 5800, 3000, 3500, 3500, 3800, 6100, 6500, 6600, 6600, 6800, 5000]
+# smartphones = [2500, 1600, 2700, 1800, 2900, 5000, 5100, 5500, 5300, 5600, 5500, 5600]
+# tablets = [1000, 1500, 1600, 1600, 1800, 5000, 5500, 5600, 5600, 5800, 3000, 3500]
+#
+# df = pd.DataFrame({"Mouth": mouths.strftime("%b %Y"), "Laptops": laptops, "Smartphones": smartphones, "Tablets": tablets})
+#
+# plt.figure(figsize=(12, 6))
+# plt.stackplot(df['Mouth'], df['Laptops'], df['Smartphones'], df['Tablets'], labels=['Ноутбуки', 'Смартфоны', 'Планшеты'])
+# plt.title("Общие ежемесячные продажи за год")
+# plt.xlabel("Месяц")
+# plt.ylabel("Общие продажи")
+# plt.grid()
+#
+# plt.legend()
+#
+#
+# plt.show()
+
+
+# ======================================================================================================================
+# Круговая диаграмма
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import pandas as pd
+
+
+
+# labels = ["Еда", "Транспорт", "Жильё", "Развлечения"]
+# sizes = [30, 20, 40, 10]
+#
+#
+# plt.pie(sizes, labels=labels, autopct='%1.1f%%', colors=["red", "green", "blue", "yellow"])
+#
+# plt.title("Круговая диаграмма")
+#
+# plt.show()
+
+# ==========================================================
+
+# sizes = [35, 25, 25, 15]
+# labels = ["Python", "JavaScript", "C++", "Java"]
+# colors = ["#ff9999", "#66bbff", "#99ff99", "#ffcc99"]
+# explode = (0.1, 0, 0, 0)
+#
+# plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', explode=explode, shadow=True, startangle=140)
+#
+# plt.title("Популярность языков программирования")
+#
+# plt.show()

@@ -206,3 +206,71 @@
 # plt.ylabel("Стоимость (тыс. руб.)")
 # plt.grid(axis="y", alpha=0.5)
 # plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import pandas as pd
+
+
+# №1
+
+# quarters = ['Q1', 'Q2', 'Q3', 'Q4']
+# electronics = [40, 55, 48, 70]
+# clothing = [30, 45, 40, 65]
+# books = [15, 20, 18, 25]
+#
+#
+# colors = ['red', 'green', 'blue']
+#
+#
+# plt.figure(figsize=(8, 5))
+#
+# plt.title("Продажи отделов магазина")
+# plt.xlabel("Кварталы")
+# plt.ylabel("Количество продаж")
+#
+# plt.grid()
+#
+# plt.plot(quarters, electronics, color=colors[0], label = 'Электроника', marker='o')
+# plt.plot(quarters, clothing, color=colors[1], label = 'Одежда', marker='s')
+# plt.plot(quarters, books, color=colors[2], label = 'Книги', marker='^')
+#
+# plt.legend()
+#
+# plt.show()
+
+
+
+#№2
+
+# brands = ['Apple', 'Samsung', 'Xiaomi', 'Другие']
+# market_share = [30, 25, 20, 25]
+#
+# plt.figure(figsize=(6, 6))
+# plt.pie(market_share, labels=brands, autopct='%1.1f%%', startangle=140)
+# plt.title("Доли рынка смартфонов")
+#
+#
+# plt.show()
+
+
+
+
+
+
+
+

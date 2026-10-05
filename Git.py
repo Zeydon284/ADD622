@@ -274,3 +274,56 @@
 
 
 
+
+
+
+# ======================================================================================================================
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import numpy as np
+# import pandas as pd
+
+
+
+#№1
+
+# tips = sns.load_dataset("tips")
+#
+# sns.scatterplot(data=tips, x="total_bill", y="tip", hue="sex")
+#
+# plt.title("взаимосвязь между общим счетом и оставленными чаевыми")
+# plt.xlabel("Общий счет")
+# plt.ylabel("Чаевые")
+#
+# plt.tight_layout()
+#
+# plt.show()
+
+
+
+#№2
+
+# tips = sns.load_dataset("tips")
+#
+# sns.boxplot(data=tips, x="smoker", y="total_bill")
+#
+# plt.title("распределение общего счета между курящими и некурящими клиентами")
+# plt.xlabel("курящий клиент")
+# plt.ylabel("Общий счёт")
+# plt.tight_layout()
+#
+# plt.show()
+
+
+
+#№3
+
+# iris = sns.load_dataset("iris")
+#
+# corr_matrix = iris.corr(numeric_only=True)
+# sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
+# plt.title("Тепловая карта корреляции признаков датасета Iris")
+# plt.tight_layout()
+#
+#
+# plt.show()

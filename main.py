@@ -5199,3 +5199,282 @@
 #
 # plt.show()
 
+
+
+
+
+
+
+#plotly ================================================================================================================
+# import plotly.express as px
+
+
+#Линия =================================================================================================================
+
+# data = {
+#     "Месяц": ['Янв', 'Фев', "Мар", "Апр"],
+#     "Температура": [-5, -3, 2, 10]
+# }
+#
+#
+# fig = px.line(data, x = "Месяц", y = "Температура", title = "Средняя температура")
+# # fig.show()
+#
+# fig.write_html("temperature.html")
+# fig.write_image("temperature.png")
+
+
+
+#Столбы ================================================================================================================
+
+# data = {
+#     "Категория": ['Продукты', 'Транспорт', 'Развлечения'],
+#     "Расходы": [5000, 3000, 2000]
+# }
+#
+# fig = px.bar(data, x="Категория", y="Расходы", title="Расходы за месяц", color="Категория",
+#              color_discrete_map={'Продукты':"orange", 'Транспрорт':"green", 'Развлечения':"yellow"})
+# fig.update_traces(textposition='outside', texttemplate="%{y}руб")
+#
+# fig.show()
+
+
+
+#Воронка ===============================================================================================================
+
+# fig = px.funnel_area(names=['A','B','C'], values=[10, 20, 30], title="Площадь воронки")
+# fig.show()
+
+
+
+#Точки =================================================================================================================
+
+# df = px.data.iris()
+#
+# fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species", title="Точечный график")
+# fig.show()
+
+
+#Точки 3D===============================================================================================================
+
+# df = px.data.iris()
+#
+# fig = px.scatter_3d(df, x="sepal_width", y="sepal_length", z="petal_length", color="species", title="3D Точечный график")
+# fig.show()
+
+
+#Точки полярные=========================================================================================================
+# df = px.data.iris()
+#
+# fig = px.scatter_polar(df, r="sepal_width", theta="sepal_length", color="species", title="Полярный график")
+# fig.show()
+
+
+
+#Точки тернарые=========================================================================================================
+
+# df = px.data.iris()
+#
+# fig = px.scatter_ternary(df, a="sepal_width", b="sepal_length", c="petal_length", color="species", title="3D Точечный график")
+# fig.show()
+
+
+
+# Точки на гео карте====================================================================================================
+
+# df = px.data.gapminder()
+#
+# fig = px.scatter_geo(df, locations="iso_alpha", color="continent", hover_name="country", size="pop",
+#                      projection="natural earth", title="Географический график")
+#
+# fig.show()
+
+
+
+# График областей=======================================================================================================
+
+# df = px.data.gapminder()
+#
+# fig = px.area(df, x="year", y="pop", color="continent", title="График областей")
+#
+# fig.show()
+
+
+
+# Полярный столбчатый график============================================================================================
+
+# df = px.data.gapminder()
+#
+# fig = px.bar_polar(df, r="pop", theta="continent", color="continent",title="Полярный столбчатый график")
+#
+# fig.show()
+
+
+
+# ящик с усами============================================================================================
+
+# df = px.data.gapminder()
+#
+# fig = px.box(df, x="continent", y="lifeExp", color="continent", title="Коробчатый график")
+#
+# fig.show()
+
+
+
+
+# Пирог============================================================================================
+
+# selected_year = 2007
+# df_year = df[df["year"] == selected_year]
+# df_continent = df_year.groupby("continent").agg({'pop': 'sum'}).reset_index()
+# df_continent['percentage'] = (df_continent['pop'] / df_continent['pop'].sum()) * 100
+#
+# fig = px.pie(df_continent, values='pop', names='continent', title=f'Распределение населения по кантинентам в {selected_year} году',
+#              color="continent", color_discrete_sequence=px.colors.qualitative.Set3, hole=0.3, labels={'continent': "Континент",
+#                                                                                                       'pop':"Население"})
+#
+# fig.update_traces(textposition='inside', textinfo='percent+label')
+# fig.update_layout(showlegend=True, legend_title_text="Континент", margin={"l": 20, "r": 20, "b": 20, "t": 20})
+#
+# fig.show()
+
+
+
+# Круговая иерархия============================================================================================
+
+# df = px.data.gapminder()
+#
+# fig = px.sunburst(df, path=['continent', 'country'], values='pop', title='Круговая иерархия')
+# fig.show()
+
+
+
+# Древесная(блочная) иерархия===========================================================================================
+
+# df = px.data.gapminder()
+# selected_year = 2007
+# df_year = df[df["year"] == selected_year]
+#
+# fig = px.treemap(df_year, path=['continent', 'country'], values='pop', color='lifeExp',
+#                  hover_data=['gdpPercap'], color_continuous_scale='RdBu',
+#                  title=f'Иерархическое дерево населения по странам и континентам в {selected_year} году')
+# fig.update_layout(margin=dict(r=25, t=50, b=25, l=25))
+#
+# fig.show()
+
+
+
+# Подсветка на карте====================================================================================================
+
+# df = px.data.gapminder().query("year == 2007")
+#
+# fig = px.choropleth(df, locations='iso_alpha', color='gdpPercap', hover_name='country',
+#                     color_continuous_scale=px.colors.sequential.YlOrRd)
+#
+# fig.update_layout(title="World GPA per Capite (2007)", geo_scope="europe") # geo_scope="europe",  geo_scope="usa" и тд.
+#
+# fig.show()
+
+
+
+# timeline==============================================================================================================
+#
+# import plotly.express as px
+# import pandas as pd
+# from plotly.graph_objs.layout.scene import xaxis
+
+# data = {
+#     'Event': [
+#         'Начало второй мировой войны',
+#         'Распад СССР',
+#         'Первый человек в космосе',
+#         'Создание интернета',
+#         'Введение евро',
+#         'Начало COVID-19 пандемии',
+#         'Разработка вакцин против COVID-19'
+#     ],
+#     'Start': [
+#         '1939-09-01',
+#         '1990-03-11',
+#         '1961-04-12',
+#         '1983-01-01',
+#         '1999-01-01',
+#         '2020-01-01',
+#         '2020-12-01',
+#     ],
+#     'End': [
+#         '1945-09-02',
+#         '1991-12-25',
+#         '1969-07-24',
+#         '1990-01-01',
+#         '1999-01-01',
+#         '2023-01-01',
+#         '2021-12-31',
+#     ],
+#     'Category': [
+#         'Война',
+#         'Политика',
+#         'Космос',
+#         'Технологии',
+#         'Экономика',
+#         'Здоровье',
+#         'Здоровье'
+#     ],
+#     'Description': [
+#         'Второй мировой конфликт, начавшийся с нападения Германии на Польшу',
+#         'Событие, символизирующее конец Холодной войны',
+#         'Нил Амстронг стал первым человеком ступившим на луну',
+#         'Начало разработки глобальной сети связи',
+#         'Введение единой валюты во многих европейских странах',
+#         'Глобальная пандемия вызванная вирусом',
+#         'Создание и внедрение вакцин для борьбы с COVID-19',
+#     ]
+# }
+#
+# df = pd.DataFrame(data)
+#
+# df['Start'] = pd.to_datetime(df['Start'])
+# df['End'] = pd.to_datetime(df['End'])
+#
+# fig = px.timeline(df, x_start='Start', x_end='End', y='Event', color='Category',
+#                   title="Временная шкала ключевых исторических событий", labels={'Event': 'Событие', 'Category': 'Категории'},
+#                   hover_data={'Description': True, 'Start': False, 'End': False})
+#
+# fig.update_yaxes(autorange='reversed')
+#
+# fig.update_layout(bargap=0.12, xaxis_title="Дата", margin={'l': 200, 'r': 50, 'b': 50, 't': 100})
+#
+# fig.show()
+
+
+
+
+
+# import plotly.express as px
+
+# Анимация столбов======================================================================================================
+
+# df = px.data.gapminder()
+#
+# fig = px.bar(df, x="continent", y="pop", animation_frame="year", color="continent", title="Население по континентам")
+#
+# fig.show()
+#
+#
+# fig.write_html("animation.html")
+
+
+# Анимация земного шара=================================================================================================
+
+# df = px.data.gapminder()
+# fig = px.scatter_geo(df, locations="iso_alpha", projection="orthographic", color="continent", hover_name="country", size="pop")
+# fig.show()
+
+
+
+
+
+
+
+
+

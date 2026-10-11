@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a194f03a-cf46-48b4-bed5-18fd48c84659" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/dash_four.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dash_one.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dash_three.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dash_two.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ADD.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Git.py" beforeDir="false" afterPath="$PROJECT_DIR$/Git.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/1.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0002293756711949" />
+      <entry key="MS500" value="1.1871153734426187" />
+      <entry key="S2" value="1.6638385592167781" />
+      <entry key="S5" value="2.0992053978658562" />
+      <entry key="S10" value="2.9050523643488457" />
+      <entry key="S30" value="5.705966992687096" />
+      <entry key="S60" value="9.463106064632896" />
+      <entry key="M2" value="16.861890796926282" />
+      <entry key="M5" value="36.57705039464728" />
+      <entry key="M10" value="61.89362497766031" />
+      <entry key="M15" value="81.06612592822393" />
+      <entry key="M30" value="133.2039963502329" />
+      <entry key="H1" value="271.5739987838708" />
+      <entry key="H2" value="621.7500491109805" />
+      <entry key="H4" value="1339.5659247057818" />
+      <entry key="D1" value="6088.537096054483" />
+      <entry key="W1" value="12598.32475904895" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="2.990167068877632E-275" />
+      <entry key="MS500" value="1.2449132544442713E-55" />
+      <entry key="S2" value="1.878385697321196E-14" />
+      <entry key="S5" value="3.2323167274129995E-6" />
+      <entry key="S10" value="0.0017979334609986534" />
+      <entry key="S30" value="0.12642484285571448" />
+      <entry key="S60" value="0.4616585232032675" />
+      <entry key="M2" value="1.2972159765954865" />
+      <entry key="M5" value="3.4482801765432214" />
+      <entry key="M10" value="5.555113921546806" />
+      <entry key="M15" value="6.970797724776658" />
+      <entry key="M30" value="10.790546682700134" />
+      <entry key="H1" value="20.720998806882243" />
+      <entry key="H2" value="46.29426841261516" />
+      <entry key="H4" value="97.90490509807384" />
+      <entry key="D1" value="414.24138646345625" />
+      <entry key="W1" value="898.1111706238" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.005889460358039765" />
+      <entry key="MS500" value="0.45715891579047596" />
+      <entry key="S2" value="1.3407729756840572" />
+      <entry key="S5" value="1.9472049543197272" />
+      <entry key="S10" value="2.8081480415759326" />
+      <entry key="S30" value="5.735712276141034" />
+      <entry key="S60" value="9.8260023484791" />
+      <entry key="M2" value="18.058639491216244" />
+      <entry key="M5" value="39.93872267105672" />
+      <entry key="M10" value="67.38362948262836" />
+      <entry key="M15" value="87.98378950597126" />
+      <entry key="M30" value="143.9552614170513" />
+      <entry key="H1" value="292.2601392355667" />
+      <entry key="H2" value="668.0071087958179" />
+      <entry key="H4" value="1437.4287479846614" />
+      <entry key="D1" value="6502.743077723672" />
+      <entry key="W1" value="13496.425196196033" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3F4cY20hH2iTdwoMNw6ydni1HUd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Git.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dash_four.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dash_three.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fff.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hhh.executor&quot;: &quot;Profiler&quot;,
+    &quot;Python.hm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hm2 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.hm2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hm3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.nhm.executor&quot;: &quot;Profiler&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ADD&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ADD" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <myKeys>
+      <visibility group="Grunt" flag="true" />
+      <visibility group="Gulp" flag="true" />
+      <visibility group="HTTP Requests" flag="true" />
+      <visibility group="Node.js" flag="true" />
+      <visibility group="Recent projects" flag="true" />
+      <visibility group="Run Configurations" flag="true" />
+      <visibility group="Run Python file" flag="true" />
+      <visibility group="Run conda command" flag="true" />
+      <visibility group="Run pip command" flag="true" />
+      <visibility group="com.intellij.httpClient.http.request.run.HttpRequestRunAnythingProvider" flag="true" />
+      <visibility group="com.intellij.ide.actions.runAnything.RunAnythingRunConfigurationProvider" flag="true" />
+      <visibility group="com.intellij.ide.actions.runAnything.activity.RunAnythingRecentProjectProvider" flag="true" />
+      <visibility group="com.intellij.lang.javascript.buildTools.grunt.GruntRunAnythingProvider" flag="true" />
+      <visibility group="com.intellij.lang.javascript.buildTools.gulp.GulpRunAnythingProvider" flag="true" />
+      <visibility group="com.intellij.lang.javascript.buildTools.npm.NpmRunAnythingProvider.Npm" flag="true" />
+      <visibility group="com.intellij.lang.javascript.buildTools.npm.NpmRunAnythingProvider.Pnpm" flag="true" />
+      <visibility group="com.intellij.lang.javascript.buildTools.npm.NpmRunAnythingProvider.Yarn" flag="true" />
+      <visibility group="com.jetbrains.nodejs.execution.NodeRunAnythingProvider" flag="true" />
+      <visibility group="com.jetbrains.python.run.runAnything.PyRunAnythingCondaProvider" flag="true" />
+      <visibility group="com.jetbrains.python.run.runAnything.PyRunAnythingFileProvider" flag="true" />
+      <visibility group="com.jetbrains.python.run.runAnything.PyRunAnythingPipProvider" flag="true" />
+      <visibility group="npm" flag="true" />
+      <visibility group="pnpm" flag="true" />
+      <visibility group="yarn" flag="true" />
+    </myKeys>
+  </component>
+  <component name="RunManager" selected="Python.Git">
+    <configuration name="Git" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ADD" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Git.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dash_four" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ADD" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dash_four.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dash_three" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ADD" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dash_three.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ADD" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ADD" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.dash_four" />
+      <item itemvalue="Python.dash_three" />
+      <item itemvalue="Python.Git" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Git" />
+        <item itemvalue="Python.dash_four" />
+        <item itemvalue="Python.dash_three" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a194f03a-cf46-48b4-bed5-18fd48c84659" name="Changes" comment="" />
+      <created>1781337827217</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1781337827217</updated>
+      <workItem from="1781337828326" duration="7266000" />
+      <workItem from="1781349203316" duration="1875000" />
+      <workItem from="1781351099147" duration="199000" />
+      <workItem from="1781356591381" duration="173000" />
+      <workItem from="1781420402666" duration="4788000" />
+      <workItem from="1781425205555" duration="6594000" />
+      <workItem from="1781453119996" duration="1440000" />
+      <workItem from="1781463171883" duration="2126000" />
+      <workItem from="1781467413621" duration="155000" />
+      <workItem from="1781939165924" duration="10113000" />
+      <workItem from="1781953921646" duration="1603000" />
+      <workItem from="1782025388025" duration="10309000" />
+      <workItem from="1782156255849" duration="2405000" />
+      <workItem from="1782543514033" duration="10296000" />
+      <workItem from="1782557394774" duration="2198000" />
+      <workItem from="1782629985965" duration="10604000" />
+      <workItem from="1782654551061" duration="1972000" />
+      <workItem from="1782656592266" duration="858000" />
+      <workItem from="1782657465078" duration="1536000" />
+      <workItem from="1782808203704" duration="2025000" />
+      <workItem from="1783148494429" duration="10115000" />
+      <workItem from="1783234877805" duration="10333000" />
+      <workItem from="1783515907000" duration="5975000" />
+      <workItem from="1783524201950" duration="332000" />
+      <workItem from="1783534906527" duration="1737000" />
+      <workItem from="1783577706858" duration="2387000" />
+      <workItem from="1783580173926" duration="17000" />
+      <workItem from="1783580223367" duration="2000" />
+      <workItem from="1783588645114" duration="378000" />
+      <workItem from="1783617906297" duration="56000" />
+      <workItem from="1783753015243" duration="10846000" />
+      <workItem from="1783839543038" duration="10333000" />
+      <workItem from="1784096676048" duration="91000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ADD$1.coverage" NAME="1 Coverage Results" MODIFIED="1782657133008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ADD$fff.coverage" NAME="fff Coverage Results" MODIFIED="1783524528381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ADD$main.coverage" NAME="main Coverage Results" MODIFIED="1783849975083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ADD$hhh.coverage" NAME="hhh Coverage Results" MODIFIED="1782657738834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv" />
+    <SUITE FILE_PATH="coverage/ADD$hm.coverage" NAME="hm Coverage Results" MODIFIED="1783588993875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

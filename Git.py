@@ -327,3 +327,41 @@
 #
 #
 # plt.show()
+
+
+
+
+
+
+
+# plotly 1 hm===========================================================================================================
+
+# import plotly.express as px
+
+
+# №1 =======================
+#
+# df = px.data.gapminder()
+# df_canada = df[df['country'] == 'Canada']
+#
+# fig = px.bar(df_canada, x="year", y="pop", title="Изменение численности населения Канады",
+#              labels={'year': 'Год', 'pop': 'Численность населения'})
+#
+# fig.show()
+
+
+
+# №2 =========================
+#
+# df = px.data.tips()
+#
+# fig = px.sunburst(df, path=["day", "time", "smoker"], values="total_bill", title="Иерархическая структура чаевых")
+#
+# fig.show()
+
+
+
+
+
+
+

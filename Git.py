@@ -365,3 +365,69 @@
 
 
 
+# plotly 2 hm ==========================================================================================================
+
+
+# import plotly.express as px
+# import pandas as pd
+
+
+#№1
+#
+# import plotly.express as px
+# import pandas as pd
+#
+#
+# df = {
+#     "month": ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сент', 'Окт', 'Нояб', 'Дек'],
+#     "temp": [-20, -12, 8, 9, 20, 35, 38, 40, 15, 9, -16, -30]
+# }
+#
+# df = pd.DataFrame(df)
+#
+# fig = px.bar(df, x="month", y="temp", animation_frame="month", color="temp", title="Температура по месяцам",
+#              labels={"temp": "Температура (°C)", "month": "Месяц года"})
+#
+#
+# fig.show()
+
+
+
+#№2
+#
+# from dash import Dash, html, dcc
+# import pandas as pd
+# import plotly.express as px
+#
+#
+# x_values = [1, 2, 3, 4, 5]
+# y_values = [x**2 for x in x_values]
+#
+# df = {
+#     'x': x_values,
+#     'y': y_values
+# }
+#
+# df = pd.DataFrame(df)
+#
+# fig = px.line(
+#     df,
+#     x='x',
+#     y='y',
+#     title='График функции y = x**2',
+#     labels={'x': 'Значение X', 'y': 'Значение Y (x**2)'}
+# )
+#
+# app = Dash()
+#
+# app.layout = html.Div([html.H1(
+#         children="Мой первый дашборд"),
+#     dcc.Graph(
+#         id='controls-and-graph',
+#         figure=fig)
+# ])
+#
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
+

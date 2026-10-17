@@ -431,3 +431,82 @@
 #     app.run(debug=True)
 
 
+
+
+
+
+
+# Dash 1 hm ==========================================================================================================
+
+
+#№1
+
+from dash import Dash, html, dcc, callback, Input, Output
+import plotly.express as px
+import pandas as pd
+
+
+data = {
+    "Товар": ["Яблоки", "Бананы", "Манго", "Груши", "Апельсины"],
+    "Продажи (шт.)": [40, 80, 20, 45, 60]
+}
+
+df = pd.DataFrame(data)
+
+app = Dash()
+
+
+app.layout = html.Div([
+    html.H2("Переключатель графиков"),
+
+    html.Div([
+        html.Label("Выберите тип визуализации:"),
+        dcc.RadioItems(
+            id="chart-type-radio",
+            options=[
+                {"label": "Столбчатая диаграмма", "value": "bar"},
+                {"label": "Линейный график", "value": "line"}
+            ],
+            value="bar"
+        )
+    ]),
+
+    dcc.Graph(id="sales-chart")
+
+])
+
+
+@app.callback(
+    Output("sales-chart", "figure"),
+    Input("chart-type-radio", "value")
+)
+
+def update_graph(chart_type):
+    if chart_type == "bar":
+
+
+        fig = px.bar(
+            df,
+            x="Товар",
+            y="Продажи (шт.)",
+            title="Продажи товаров (Столбчатая диаграмма)",
+            color="Товар"
+        )
+
+    else:
+
+
+        fig = px.line(
+            df,
+            x="Товар",
+            y="Продажи (шт.)",
+            title="Продажи товаров (Линейный график)",
+            markers=True
+        )
+
+
+    return fig
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

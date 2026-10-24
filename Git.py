@@ -440,73 +440,164 @@
 
 
 #№1
+#
+# from dash import Dash, html, dcc, callback, Input, Output
+# import plotly.express as px
+# import pandas as pd
+#
+#
+# data = {
+#     "Товар": ["Яблоки", "Бананы", "Манго", "Груши", "Апельсины"],
+#     "Продажи (шт.)": [40, 80, 20, 45, 60]
+# }
+#
+# df = pd.DataFrame(data)
+#
+# app = Dash()
+#
+#
+# app.layout = html.Div([
+#     html.H2("Переключатель графиков"),
+#
+#     html.Div([
+#         html.Label("Выберите тип визуализации:"),
+#         dcc.RadioItems(
+#             id="chart-type-radio",
+#             options=[
+#                 {"label": "Столбчатая диаграмма", "value": "bar"},
+#                 {"label": "Линейный график", "value": "line"}
+#             ],
+#             value="bar"
+#         )
+#     ]),
+#
+#     dcc.Graph(id="sales-chart")
+#
+# ])
+#
+#
+# @app.callback(
+#     Output("sales-chart", "figure"),
+#     Input("chart-type-radio", "value")
+# )
+#
+# def update_graph(chart_type):
+#     if chart_type == "bar":
+#
+#
+#         fig = px.bar(
+#             df,
+#             x="Товар",
+#             y="Продажи (шт.)",
+#             title="Продажи товаров (Столбчатая диаграмма)",
+#             color="Товар"
+#         )
+#
+#     else:
+#
+#
+#         fig = px.line(
+#             df,
+#             x="Товар",
+#             y="Продажи (шт.)",
+#             title="Продажи товаров (Линейный график)",
+#             markers=True
+#         )
+#
+#
+#     return fig
+#
+#
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
-from dash import Dash, html, dcc, callback, Input, Output
-import plotly.express as px
+
+
+
+
+
+# Dash/SQL 2 hm ========================================================================================================
+
+import sqlite3
 import pandas as pd
+import plotly.express as px
+from dash import Dash, html, dcc, Input, Output
 
 
-data = {
-    "Товар": ["Яблоки", "Бананы", "Манго", "Груши", "Апельсины"],
-    "Продажи (шт.)": [40, 80, 20, 45, 60]
-}
+def create_sample_db():
+    conn = sqlite3.connect('sales.db')
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS sales (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            city TEXT,
+            month TEXT,
+            amount REAL    
+    )
+    ''')
 
-df = pd.DataFrame(data)
+    sample_data = [
+        ('Москва', 'Январь', 120000),
+        ('Москва', 'Февраль', 150000),
+        ('Москва', 'Март', 170000),
+        ('Санкт-Питербург', 'Январь', 90000),
+        ('Санкт-Питербург', 'Февраль', 95000),
+        ('Санкт-Питербург', 'Март', 110000),
+        ('Казань', 'Январь', 50000),
+        ('Казань', 'Февраль', 60000),
+        ('Казань', 'Март', 75000),
+    ]
+
+    cursor.executemany('''INSERT INTO sales (city, month, amount) VALUES (?, ?, ?)''', sample_data)
+    conn.commit()
+    conn.close()
+
+# create_sample_db()
+
+
+
+def get_data_from_db():
+    conn = sqlite3.connect('sales.db')
+    df = pd.read_sql_query('SELECT city, month, amount FROM sales', conn)
+    conn.close()
+    return df
+
+
+df_sales = get_data_from_db()
+cities = df_sales['city'].unique()
+# print(cities)
+
 
 app = Dash()
 
-
 app.layout = html.Div([
-    html.H2("Переключатель графиков"),
-
+    html.H1("Динамика продаж по городам", style={'textAlign': 'center'}),
     html.Div([
-        html.Label("Выберите тип визуализации:"),
-        dcc.RadioItems(
-            id="chart-type-radio",
-            options=[
-                {"label": "Столбчатая диаграмма", "value": "bar"},
-                {"label": "Линейный график", "value": "line"}
-            ],
-            value="bar"
+        html.Label("Выберите город:"),
+        dcc.Dropdown(
+            id='city-dropdown',
+            options=[{'label': city, 'value': city} for city in cities],
+            value=cities[0],
+            clearable=False
         )
-    ]),
+    ], style={'width': '50%', 'margin': '0 auto'}),
 
-    dcc.Graph(id="sales-chart")
-
+    dcc.Graph(id='sales-graph')
 ])
 
-
 @app.callback(
-    Output("sales-chart", "figure"),
-    Input("chart-type-radio", "value")
+    Output('sales-graph', 'figure'),
+    Input('city-dropdown', 'value')
 )
 
-def update_graph(chart_type):
-    if chart_type == "bar":
-
-
-        fig = px.bar(
-            df,
-            x="Товар",
-            y="Продажи (шт.)",
-            title="Продажи товаров (Столбчатая диаграмма)",
-            color="Товар"
-        )
-
-    else:
-
-
-        fig = px.line(
-            df,
-            x="Товар",
-            y="Продажи (шт.)",
-            title="Продажи товаров (Линейный график)",
-            markers=True
-        )
-
+def update_graph(selected_city):
+    filtered_df = df_sales[df_sales['city'] == selected_city]
+    fig = px.bar(filtered_df, x='month', y='amount', color='month' ,title=f"Продажи в городе: {selected_city}",
+    labels={'month': 'Месяц', 'amount': 'Сумма продаж (руб.)'})
 
     return fig
 
 
-if __name__ == "__main__":
+
+
+if __name__ == '__main__':
     app.run(debug=True)

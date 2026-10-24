@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a194f03a-cf46-48b4-bed5-18fd48c84659" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/dash_eight.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dash_five.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dash_seven.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dash_six.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dash_nine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dash_ten.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Git.py" beforeDir="false" afterPath="$PROJECT_DIR$/Git.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dash_four.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash_four.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dash_eight.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash_eight.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,61 +31,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000433317577" />
-      <entry key="MS500" value="1.0336791607827152" />
-      <entry key="S2" value="1.429355803337366" />
-      <entry key="S5" value="1.8540732460203604" />
-      <entry key="S10" value="2.6622299494969495" />
-      <entry key="S30" value="4.66226697286534" />
-      <entry key="S60" value="5.666101059970915" />
-      <entry key="M2" value="6.847132438999574" />
-      <entry key="M5" value="18.77492232496427" />
-      <entry key="M10" value="53.42812734185523" />
-      <entry key="M15" value="91.34304043768427" />
-      <entry key="M30" value="196.4845807956005" />
-      <entry key="H1" value="370.94368683703806" />
-      <entry key="H2" value="693.8828180649236" />
-      <entry key="H4" value="1367.581520267619" />
-      <entry key="D1" value="6294.8788563539965" />
-      <entry key="W1" value="13256.998146389198" />
+      <entry key="MS100" value="1.0025593627619027" />
+      <entry key="MS500" value="1.317646340300605" />
+      <entry key="S2" value="2.089123042556074" />
+      <entry key="S5" value="2.5424125666747983" />
+      <entry key="S10" value="2.7513398878739634" />
+      <entry key="S30" value="2.912194378394423" />
+      <entry key="S60" value="2.955447728836562" />
+      <entry key="M2" value="2.9775588808685827" />
+      <entry key="M5" value="3.009160116035304" />
+      <entry key="M10" value="4.443496713773256" />
+      <entry key="M15" value="10.119904102140515" />
+      <entry key="M30" value="50.46938686487113" />
+      <entry key="H1" value="194.5252343004745" />
+      <entry key="H2" value="553.4794049915923" />
+      <entry key="H4" value="1277.214907357496" />
+      <entry key="D1" value="6540.837099248836" />
+      <entry key="W1" value="14180.601659897342" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="5.60472010553201E-151" />
-      <entry key="S5" value="7.932709902315944E-61" />
-      <entry key="S10" value="8.906964673782955E-31" />
-      <entry key="S30" value="1.0032839345061496E-10" />
-      <entry key="S60" value="1.3342697984630326E-5" />
-      <entry key="M2" value="0.007091521879959448" />
-      <entry key="M5" value="0.39951033496217686" />
-      <entry key="M10" value="1.809690783992924" />
-      <entry key="M15" value="3.374053815706661" />
-      <entry key="M30" value="8.466622028854282" />
-      <entry key="H1" value="19.230516664170406" />
-      <entry key="H2" value="41.564857002173376" />
-      <entry key="H4" value="89.45269918524345" />
-      <entry key="D1" value="420.4837877408206" />
-      <entry key="W1" value="934.3733362716636" />
+      <entry key="MS100" value="1.3811928316067163E-29" />
+      <entry key="MS500" value="1.690638922109349E-6" />
+      <entry key="S2" value="0.036058920062186306" />
+      <entry key="S5" value="0.26473117442789307" />
+      <entry key="S10" value="0.5145203343191531" />
+      <entry key="S30" value="0.8013105261039307" />
+      <entry key="S60" value="0.8951594975779068" />
+      <entry key="M2" value="0.9461287002674182" />
+      <entry key="M5" value="0.9796427555225901" />
+      <entry key="M10" value="1.0897791140326636" />
+      <entry key="M15" value="1.4297003905807053" />
+      <entry key="M30" value="3.3838256762369086" />
+      <entry key="H1" value="9.80164605762981" />
+      <entry key="H2" value="27.4569110442665" />
+      <entry key="H4" value="69.81201917590525" />
+      <entry key="D1" value="413.8794995771887" />
+      <entry key="W1" value="970.1496765059258" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8010699118235007" />
-      <entry key="MS500" value="0.988736715174974" />
-      <entry key="S2" value="1.413300611362916" />
-      <entry key="S5" value="1.8458118836243658" />
-      <entry key="S10" value="2.6565753927017686" />
-      <entry key="S30" value="4.659129925298256" />
-      <entry key="S60" value="5.664159705467221" />
-      <entry key="M2" value="6.851980713103461" />
-      <entry key="M5" value="19.16561507912489" />
-      <entry key="M10" value="55.22211910739385" />
-      <entry key="M15" value="94.69844024345836" />
-      <entry key="M30" value="204.92949705093193" />
-      <entry key="H1" value="390.1504292643971" />
-      <entry key="H2" value="735.4205410816696" />
-      <entry key="H4" value="1457.0009677864277" />
-      <entry key="D1" value="6715.3284601369305" />
-      <entry key="W1" value="14191.36056419411" />
+      <entry key="MS100" value="0.8911333749805563" />
+      <entry key="MS500" value="1.2872695753336851" />
+      <entry key="S2" value="2.101386624987866" />
+      <entry key="S5" value="2.7643025693352326" />
+      <entry key="S10" value="3.225592573548308" />
+      <entry key="S30" value="3.6926909110697097" />
+      <entry key="S60" value="3.838975261698647" />
+      <entry key="M2" value="3.917537580152703" />
+      <entry key="M5" value="3.9862392545143375" />
+      <entry key="M10" value="5.531071925011181" />
+      <entry key="M15" value="11.545537022139486" />
+      <entry key="M30" value="53.84169318591821" />
+      <entry key="H1" value="204.3051430862318" />
+      <entry key="H2" value="580.9071011795013" />
+      <entry key="H4" value="1346.9932238632223" />
+      <entry key="D1" value="6954.68195220748" />
+      <entry key="W1" value="15150.73985030464" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -108,7 +106,9 @@
     &quot;Python.1.executor&quot;: &quot;Run&quot;,
     &quot;Python.Git.executor&quot;: &quot;Run&quot;,
     &quot;Python.dash_four.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dash_nine.executor&quot;: &quot;Run&quot;,
     &quot;Python.dash_seven.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dash_ten.executor&quot;: &quot;Run&quot;,
     &quot;Python.dash_three.executor&quot;: &quot;Run&quot;,
     &quot;Python.fff.executor&quot;: &quot;Run&quot;,
     &quot;Python.hhh.executor&quot;: &quot;Profiler&quot;,
@@ -171,7 +171,7 @@
       <visibility group="yarn" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.dash_seven">
+  <component name="RunManager" selected="Python.Git">
     <configuration name="Git" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ADD" />
       <option name="ENV_FILES" value="" />
@@ -220,6 +220,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="dash_nine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ADD" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dash_nine.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="dash_seven" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ADD" />
       <option name="ENV_FILES" value="" />
@@ -244,7 +268,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dash_three" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="dash_ten" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ADD" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -259,32 +283,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dash_three.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ADD" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dash_ten.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -294,19 +293,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.dash_nine" />
+      <item itemvalue="Python.dash_ten" />
       <item itemvalue="Python.dash_seven" />
       <item itemvalue="Python.dash_four" />
-      <item itemvalue="Python.dash_three" />
       <item itemvalue="Python.Git" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dash_seven" />
         <item itemvalue="Python.Git" />
+        <item itemvalue="Python.dash_ten" />
+        <item itemvalue="Python.dash_nine" />
+        <item itemvalue="Python.dash_seven" />
         <item itemvalue="Python.dash_four" />
-        <item itemvalue="Python.dash_three" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>

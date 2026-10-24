@@ -5472,9 +5472,119 @@
 
 
 
+# Бернулли ====================================================================================================================================
 
 
+# import math
+#
+# n, k, p = 20, 2, 0.1
+#
+# prob = math.comb(n, k) * (p ** k) * ((1-p) ** (n-k))
+#
+# print(f"Вероятность: {prob:.4f}")
 
+# ============================================================================================
 
+# import math
+# import matplotlib.pyplot as plt
+#
+# n = 20
+# p = 0.1
+# q = 1 - p
+#
+# k_value = list(range(0, 11))
+#
+# probabilities = []
+#
+# for k in k_value:
+#     c_n_k = math.comb(n, k)
+#     prob = c_n_k * (p ** k) * (q ** (n - k))
+#     probabilities.append(prob)
+#
+# print(probabilities)
+#
+# plt.figure(figsize=(10, 6))
+# bars = plt.bar(k_value, probabilities, color = 'skyblue', edgecolor = 'black', alpha = 0.8)
+#
+# target_k = 2
+# bars[target_k].set_color('forestgreen')
+# bars[target_k].set_edgecolor('black')
+#
+# for bar in bars:
+#     height = bar.get_height()
+#     if height > 0.001:
+#         plt.text(
+#             bar.get_x() + bar.get_width() / 2,
+#             height + 0.005,
+#             f'{height:.4f}',
+#             ha='center',
+#             va='bottom',
+#             fontsize=9,
+#         )
+#
+# plt.title('Расчёт вероятности Бернулли (n = 20, p = 0.10)', fontsize = 12, pad = 15)
+# plt.xlabel("Количество ушедших пользователей (k)", fontsize = 10)
+# plt.ylabel("Вероятность P(k)", fontsize = 10)
+#
+# plt.xticks(k_value)
+# plt.grid(axis='y', linestyle='--', alpha=0.5)
+#
+# plt.ylim(0, max(probabilities) + 0.04)
+#
+# plt.show()
 
+# ============================================================================================
 
+import math
+import matplotlib.pyplot as plt
+
+# n = 100
+# k = 3
+# p = 0.05
+# q = 1 - p
+#
+# combinations = math.comb(n, k)
+# probability = combinations * (p ** k) * (q ** (n-k))
+#
+# print(f"Число сочетаний: {combinations}")
+# print(f"Вероятность в долях: {probability:.5f}")
+# print(f"Вероятность в процентах: {probability * 100:.2f}%")
+
+# ============================================================================================
+
+n = 100
+k_target = 3
+p = 0.05
+q = 1 - p
+
+k_values = list(range(16))
+probabilities = []
+
+for k in k_values:
+    combinations = math.comb(n, k)
+    prob = combinations * (p ** k) * (q ** (n - k))
+    probabilities.append(prob)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 6))
+
+ax1.plot(k_values, probabilities, color='blue', marker='o', linestyle='dashed', linewidth=2, label="Кривая распределения")
+
+ax1.plot(k_target, probabilities[k_target], marker="o", color="orange", markersize=10, label="Цель (k=3)")
+
+ax1.set_title("Линейный график распределения Бернулли", fontsize=12)
+ax1.set_xlabel("Количество покупателей (k)")
+ax1.set_ylabel("Вероятность")
+ax1.set_xticks(k_values)
+
+ax1.grid(linestyle='--', alpha=0.5)
+
+ax1.legend()
+
+ax1.text(k_target, probabilities[k_target] + 0.01, f"{probabilities[k_target] * 100:.2f}%", color='brown', ha='right')
+
+markerline, stemlines, baseline = ax2.stem(k_values, probabilities, linefmt='gray', markerfmt='bo', basefmt='k-')
+plt.setp(markerline, markersize=6)
+
+ax2.plot([k_target, k_target], [0, probabilities[k_target]], color="red", linewidth=2.5)
+
+plt.show()

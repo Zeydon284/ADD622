@@ -5535,8 +5535,8 @@
 
 # ============================================================================================
 
-import math
-import matplotlib.pyplot as plt
+# import math
+# import matplotlib.pyplot as plt
 
 # n = 100
 # k = 3
@@ -5551,40 +5551,241 @@ import matplotlib.pyplot as plt
 # print(f"Вероятность в процентах: {probability * 100:.2f}%")
 
 # ============================================================================================
+#
+# n = 100
+# k_target = 3
+# p = 0.05
+# q = 1 - p
+#
+# k_values = list(range(16))
+# probabilities = []
+#
+# for k in k_values:
+#     combinations = math.comb(n, k)
+#     prob = combinations * (p ** k) * (q ** (n - k))
+#     probabilities.append(prob)
+#
+# fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 6))
+#
+# ax1.plot(k_values, probabilities, color='blue', marker='o', linestyle='dashed', linewidth=2, label="Кривая распределения")
+#
+# ax1.plot(k_target, probabilities[k_target], marker="o", color="orange", markersize=10, label="Цель (k=3)")
+#
+# ax1.set_title("Линейный график распределения Бернулли", fontsize=12)
+# ax1.set_xlabel("Количество покупателей (k)")
+# ax1.set_ylabel("Вероятность")
+# ax1.set_xticks(k_values)
+#
+# ax1.grid(linestyle='--', alpha=0.5)
+#
+# ax1.legend()
+#
+# ax1.text(k_target, probabilities[k_target] + 0.01, f"{probabilities[k_target] * 100:.2f}%", color='brown', ha='right')
+#
+# markerline, stemlines, baseline = ax2.stem(k_values, probabilities, linefmt='gray', markerfmt='bo', basefmt='k-')
+# plt.setp(markerline, markersize=6)
+#
+# ax2.plot([k_target, k_target], [0, probabilities[k_target]], color="red", linewidth=2.5)
+# ax2.plot(k_target, probabilities[k_target], color='red', marker='o', markersize=9, label="Искомое k=3")
+# ax2.set_title("Дискретный график (Спички)", fontsize=12)
+# ax2.set_xlabel("Количество покупателей (k)")
+# ax2.set_ylabel("Вероятность")
+# ax2.set_xticks(k_values)
+#
+# ax2.legend()
+#
+# ax2.grid(linestyle='--', alpha=0.5)
+#
+# ax2.text(k_target, probabilities[k_target] + 0.01, f"{probabilities[k_target] * 100:.2f}%", color='red', fontweight='bold', ha='right')
+#
+# plt.suptitle(f"Графики Бернулли (n={n}, p={p})", fontsize=14, y=0.98)
+#
+# plt.tight_layout()
+#
+# plt.show()
 
-n = 100
-k_target = 3
-p = 0.05
-q = 1 - p
 
-k_values = list(range(16))
-probabilities = []
 
-for k in k_values:
-    combinations = math.comb(n, k)
-    prob = combinations * (p ** k) * (q ** (n - k))
-    probabilities.append(prob)
+# ф. Байеса ====================================================================================================================================
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 6))
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# import numpy as np
+#
+#
+# data = {
+#     "Купил_книгу": [1, 0, 1, 1, 0, 1, 0, 0, 0, 1],
+#     "Купил_игру": [0, 1, 1, 0, 0, 1, 0, 1, 1, 0],
+#     "Похожие_купили_A": [0.7, 0.3, 0.9, 0.6, 0.1, 0.8, 0.4, 0.2, 0.25, 0.9],
+#     "Купили_товар_A": [1, 0, 1, 1, 0, 0, 0, 0, 0, 1]
+# }
+#
+# df = pd.DataFrame(data)
+#
+# total_users = len(df)
+#
+# buyers = df[df["Купили_товар_A"] == 1]
+#
+# non_buyers = df[df["Купили_товар_A"] == 0]
+#
+# p_y1 = len(buyers) / total_users
+# # print(p_y1)
+#
+# p_y0 = len(non_buyers) / total_users
+# # print(p_y0)
+#
+#
+# def get_conditional_prob(feature_name, feature_value, target_value):
+#     sub_df = buyers if target_value == 1 else non_buyers
+#     count_feature = len(sub_df[sub_df[feature_name] == feature_value])
+#     total_in_group = len(sub_df)
+#     return (count_feature + 1) / (total_in_group + 2)
+#
+#
+# new_user = {
+#     "Купил_книгу": 1,
+#     "Купил_игру": 0,
+#     "Похожие_купили_A": 1
+# }
+#
+# prob_buy_numerator = p_y1
+#
+# for feature, value in new_user.items():
+#
+#     prob_buy_numerator *= get_conditional_prob(feature, value, 1)
+#
+# prob_non_buy_numerator = p_y0
+#
+# for feature, value in new_user.items():
+#     prob_non_buy_numerator *= get_conditional_prob(feature, value, 0)
+#
+#
+# p_user_will_buy = prob_buy_numerator / (prob_buy_numerator + prob_non_buy_numerator)
+#
+# print(f"Априорная вероятность покупки Товара A в системе: {p_y1:.2f}")
+# print(f"Вычисленная вероятность покупки для нового пользователя: {p_user_will_buy:.2f}")
+#
+# if p_user_will_buy > 0.5:
+#     print("РЕКОМЕНДАЦИЯ: Этот товар точно стоит предложить пользователю!")
+# else:
+#     print("РЕКОМЕНДАЦИЯ: Низкая вероятность покупки, не предлагать")
+#
+#
+# features = list(new_user.keys())
+# prob_if_buy = []
+# prob_if_non_buy = []
+#
+# for feature, value in new_user.items():
+#     prob_if_buy.append(get_conditional_prob(feature, value, 1))
+#     prob_if_non_buy.append(get_conditional_prob(feature, value, 0))
+#
+# x = np.arange(len(features))
+# width = 0.35
+#
+# fig, ax = plt.subplots(figsize=(10, 6))
+#
+# rects1 = ax.bar(x - width / 2, prob_if_buy, width, label="У покупателей (Y=1)", color="#660099")
+# rects2 = ax.bar(x + width / 2, prob_if_non_buy, width, label="У НЕ-покупателей (Y=0)", color="#ffcc00")
+#
+# ax.set_title("Сравнение признаков нового пользователя: Покупатели VS Не-покупатели")
+# ax.set_ylabel("Условная вероятность признака")
+# ax.set_xticks(x)
+# ax.set_xticklabels([f"{f}\n(значение: {v})" for f, v in new_user.items()])
+# ax.legend()
+# ax.grid(axis="y", linestyle="--", alpha=0.7)
+# ax.set_axisbelow(True)  #скрывает сетку за столбцами
+#
+# ax.bar_label(rects1, fmt="%.2f", padding=3)
+# ax.bar_label(rects2, fmt="%.2f", padding=3)
+#
+# fig.tight_layout()
+#
+# plt.show()
 
-ax1.plot(k_values, probabilities, color='blue', marker='o', linestyle='dashed', linewidth=2, label="Кривая распределения")
 
-ax1.plot(k_target, probabilities[k_target], marker="o", color="orange", markersize=10, label="Цель (k=3)")
+# ===================================================================================================
+#
+#
+# import matplotlib.pyplot as plt
+# import numpy as np
+# from fontTools.subset import prune_hints
+#
+#
+#
+# visitor_A = 1000
+# conversion_A = 40
+#
+# visitor_B = 1050
+# conversion_B = 58
+#
+#
+# alpha_prior, beta_prior = 1, 1
+#
+# alpha_A = alpha_prior + conversion_A
+# beta_A = beta_prior + (visitor_A - conversion_A)
+#
+# alpha_B = alpha_prior + conversion_B
+# beta_B = beta_prior + (visitor_B - conversion_B)
+#
+#
+# simulations = 1000000
+# samples_A = np.random.beta(alpha_A, beta_A, simulations)
+# samples_B = np.random.beta(alpha_B, beta_B, simulations)
+#
+# prob_B_beta_A = np.mean(samples_B > samples_A)
+#
+# expected_uplift = (np.mean(samples_B) - np.mean(samples_A)) / np.mean(samples_A)
+#
+# print(f"Конверсия группы A (фактическая): {conversion_A / visitor_A:.2%}")
+# print(f"Конверсия группы B (фактическая): {conversion_B / visitor_B:.2%}")
+#
+# print("-" * 60)
+#
+# print(f"Вероятность того, что версия B эффективней версии A: {prob_B_beta_A:.2%}")
+# print(f"Ожидаемый относительный прирост конверсии: {expected_uplift:.2%}")
+#
+# print("-" * 60)
+#
+# if prob_B_beta_A > 0.95:
+#     print("Вывод: Вариант В статистически лучше! Можно внедрять")
+# elif prob_B_beta_A > 0.05:
+#     print("Вывод: Вариант В статистически значительно хуже! Оставляем вариант А")
+# else:
+#     print("Вывод: Разница не очевидна (или данных мало). Продолжайте тест")
+#
+#
+# plt.figure(figsize=(10, 6))
+#
+# plt.hist(
+#     samples_A,
+#     bins=100,
+#     alpha=0.6,
+#     label=f"Группа А (CR = {conversion_A / visitor_A:.2%})",
+#     color="#3498db",
+#     density=True,
+# )
+#
+# plt.hist(
+#     samples_B,
+#     bins=100,
+#     alpha=0.6,
+#     label=f"Группа B (CR = {conversion_B / visitor_B:.2%})",
+#     color="#e67e22",
+#     density=True,
+# )
+#
+# plt.title("Апостериорное распределение конверсий групп А и В")
+# plt.xlabel("Коэффициент конверсии")
+# plt.ylabel("Плотность вероятности")
+#
+# plt.axvline(np.mean(samples_A), color="#2980b9", linestyle="--", linewidth=2, label="Средняя CR A")
+# plt.axvline(np.mean(samples_B), color="#d35400", linestyle="--", linewidth=2, label="Средняя CR B")
+#
+# plt.grid(axis="y", linestyle="--", alpha=0.5)
+#
+# plt.legend()
+#
+# plt.show()
 
-ax1.set_title("Линейный график распределения Бернулли", fontsize=12)
-ax1.set_xlabel("Количество покупателей (k)")
-ax1.set_ylabel("Вероятность")
-ax1.set_xticks(k_values)
 
-ax1.grid(linestyle='--', alpha=0.5)
 
-ax1.legend()
-
-ax1.text(k_target, probabilities[k_target] + 0.01, f"{probabilities[k_target] * 100:.2f}%", color='brown', ha='right')
-
-markerline, stemlines, baseline = ax2.stem(k_values, probabilities, linefmt='gray', markerfmt='bo', basefmt='k-')
-plt.setp(markerline, markersize=6)
-
-ax2.plot([k_target, k_target], [0, probabilities[k_target]], color="red", linewidth=2.5)
-
-plt.show()
